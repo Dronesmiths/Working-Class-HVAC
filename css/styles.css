@@ -865,14 +865,27 @@ footer {
 .avyard-faq-inner {
     max-width: 1100px;
     margin: auto;
+    text-align: center;
 }
 
 .avyard-faq h2 {
     text-align: center;
     font-size: 38px;
     font-weight: 800;
-    color: var(--primary-dark);
+    color: var(--primary-blue);
     margin-bottom: 18px;
+    position: relative;
+    display: inline-block;
+}
+
+.avyard-faq h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-red);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .avyard-faq-lead {
