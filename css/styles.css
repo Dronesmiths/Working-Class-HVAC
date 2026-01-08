@@ -585,7 +585,7 @@ nav a.active {
 
 /* Footer */
 footer {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-blue);
     color: var(--white);
     padding: 60px 0 20px;
     text-align: center;
