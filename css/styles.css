@@ -2248,7 +2248,21 @@ footer {
     }
 
     .av-explore-card {
-        height: 280px;
+        height: auto;
+        /* Allow content to dictate height */
+        padding: 30px 25px;
+    }
+
+    .av-card-icon {
+        font-size: 48px !important;
+        /* Force size on mobile */
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .av-card-icon i {
+        font-size: 48px !important;
+        /* Ensure icon font inherits or is forced */
     }
 }
 
@@ -2403,6 +2417,7 @@ footer {
         transform: translateY(-5px);
     }
 }
+
 /* Service Pages Layout */
 .service-page-grid {
     display: grid;
