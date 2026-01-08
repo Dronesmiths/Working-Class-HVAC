@@ -1308,6 +1308,43 @@ footer {
 
 .aw-footer-phone a {
     color: var(--accent-yellow);
+    text-decoration: none;
+}
+
+.aw-footer-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.aw-footer-email a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.aw-footer-email a:hover {
+    color: var(--accent-yellow);
+}
+
+.aw-footer-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.aw-footer-address a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.aw-footer-address a:hover {
+    color: var(--accent-yellow);
 }
 
 .aw-footer-services {
