@@ -357,7 +357,6 @@ nav a.active {
     font-size: 2.5rem;
     position: relative;
     display: inline-block;
-    color: var(--primary-dark);
 }
 
 .section-title h2::after {
