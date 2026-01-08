@@ -4,7 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - AV Tree Pros</title>
+    <!-- Cache Buster: Updated -->
+    <title>Contact Us | Working Class HVAC Lancaster</title>
+    <meta name="description"
+        content="Contact Working Class HVAC for honest heating and cooling service in Lancaster, Palmdale, and the Antelope Valley. Call (661) 494-8075 for a free estimate.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Working Class HVAC",
+      "description": "Contact Matt Gore and the team at Working Class HVAC for AC repair, furnace installation, and emergency service in Lancaster, CA.",
+      "mainEntity": {
+        "@type": "HVACBusiness",
+        "name": "Working Class HVAC",
+        "telephone": "(661) 494-8075",
+        "email": "WorkingclassAV@yahoo.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2232 West Ave L",
+          "addressLocality": "Lancaster",
+          "addressRegion": "CA",
+          "postalCode": "93536",
+          "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.6599102",
+            "longitude": "-118.171233"
+        },
+        "currenciesAccepted": "USD",
+        "openingHours": "Mo-Fr 07:00-18:00",
+        "paymentAccepted": "Cash, Credit Card, Check",
+        "priceRange": "$$"
+      }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +52,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../css/styles.css?v=1.4">
+    <link rel="stylesheet" href="../css/styles.css?v=1.5">
 </head>
 
 <body>
@@ -24,8 +60,9 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <a href="/" class="logo logo-image">
-                <img src="../images/working-class-logo.png" alt="Working Class HVAC" class="logo-img">
+            <a href="/" class="logo logo-simple">
+                <span class="wc-text">Working Class</span>
+                <span class="hvac-text">HVAC</span>
             </a>
             <nav class="nav-menu">
                 <ul>
@@ -44,17 +81,18 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="hero page-hero">
+    <section class="hero page-hero"
+        style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../images/hero-home-matt.png'); background-position: center; background-size: cover;">
         <div class="container">
             <h1>Contact Us</h1>
-            <p>Get in touch for a free estimate.</p>
+            <p>Get in touch for a free estimate on your AC or heating needs.</p>
         </div>
     </section>
 
     <!-- Contact Content -->
     <section class="features">
         <div class="container">
-            <div class="features-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="features-grid">
                 <!-- Contact Info -->
                 <div class="feature-card" style="text-align: left;">
                     <h2 style="margin-bottom: 20px;">Get a Quote</h2>
@@ -62,12 +100,12 @@
                         schedule a service.</p>
 
                     <div style="margin-bottom: 15px;">
-                        <i class="fas fa-phone-alt" style="color: var(--primary-green); margin-right: 10px;"></i>
-                        <strong style="font-size: 1.2rem;">(661) 498-4444</strong>
+                        <i class="fas fa-phone-alt" style="color: var(--primary-dark); margin-right: 10px;"></i>
+                        <strong style="font-size: 1.2rem;">(661) 494-8075</strong>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <i class="fas fa-envelope" style="color: var(--primary-green); margin-right: 10px;"></i>
-                        <span>info@avtreepros.com</span>
+                        <i class="fas fa-envelope" style="color: var(--primary-dark); margin-right: 10px;"></i>
+                        <span>WorkingclassAV@yahoo.com</span>
                     </div>
                 </div>
 
@@ -90,7 +128,7 @@
                             <label style="display: block; margin-bottom: 5px; font-weight: 600;">Message</label>
                             <textarea
                                 style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; height: 100px;"
-                                placeholder="How can we help?"></textarea>
+                                placeholder="My AC is making a weird noise..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -126,12 +164,12 @@
             <div class="aw-footer-services">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="/services/tree-care/">AC Repair & Installation</a></li>
+                    <li><a href="/services/ac-repair/">AC Repair & Installation</a></li>
                     <li><a href="/services/emergency-service/">Emergency HVAC Service</a></li>
-                    <li><a href="/services/palm-trimming/">Furnace Installation</a></li>
-                    <li><a href="/services/stump-grinding/">Heating & Cooling</a></li>
-                    <li><a href="/services/tree-trimming/">Air Quality Services</a></li>
-                    <li><a href="/services/tree-removal/">Maintenance Plans</a></li>
+                    <li><a href="/services/furnace-repair/">Furnace Installation</a></li>
+                    <li><a href="/services/heating-cooling/">Heating & Cooling</a></li>
+                    <li><a href="/services/air-quality/">Air Quality Services</a></li>
+                    <li><a href="/services/maintenance/">Maintenance Plans</a></li>
                 </ul>
             </div>
 

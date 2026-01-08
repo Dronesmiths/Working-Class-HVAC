@@ -4,9 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Tree Services | AV Tree Pros</title>
+    <title>Expert HVAC Services | Working Class HVAC Lancaster</title>
     <meta name="description"
-        content="Complete tree care services in Palmdale, Lancaster, and the Antelope Valley. Commercial and residential tree trimming, removal, stump grinding, and emergency services.">
+        content="Complete heating and cooling services in Palmdale, Lancaster, and the Antelope Valley. AC repair, furnace installation, ductwork, and emergency HVAC services.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "HVAC Services",
+          "provider": {
+            "@type": "HVACBusiness",
+            "name": "Working Class HVAC",
+            "telephone": "(661) 494-8075",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2232 West Ave L",
+              "addressLocality": "Lancaster",
+              "addressRegion": "CA",
+              "postalCode": "93536",
+              "addressCountry": "US"
+            }
+          },
+          "areaServed": [
+            "Lancaster",
+            "Palmdale",
+            "Quartz Hill",
+            "Rosamond",
+            "Littlerock"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "HVAC Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AC Repair & Installation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Furnace Repair & Heating"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Emergency HVAC Service"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Air Quality Services"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What areas do you service?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We serve the entire Antelope Valley, including Palmdale, Lancaster, Quartz Hill, Rosamond, and Littlerock."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer emergency AC repair?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We have a 24/7 emergency response team for when your system breaks down during extreme weather."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does a new AC unit cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cost varies by home size and efficiency rating. We provide free, no-obligation estimates to give you an accurate price for a system that fits your budget."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are you licensed and insured?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Working Class HVAC is a fully licensed C-20 HVAC Contractor (#1024283). We are insured for your protection."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +131,9 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <a href="/" class="logo logo-image">
-                <img src="../images/working-class-logo.png" alt="Working Class HVAC" class="logo-img">
+            <a href="/" class="logo logo-simple">
+                <span class="wc-text">Working Class</span>
+                <span class="hvac-text">HVAC</span>
             </a>
             <nav class="nav-menu">
                 <ul>
@@ -46,11 +152,12 @@
     </header>
 
     <!-- 1. Hero Section -->
-    <section class="hero page-hero">
+    <section class="hero page-hero"
+        style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../images/hero-home-matt.png'); background-position: center; background-size: cover;">
         <div class="container">
-            <h1>Expert Tree Care Services in the Antelope Valley</h1>
-            <p>From precision trimming and pruning to safe large tree removals, we provide professional tree services
-                tailored for Palmdale and Lancaster homeowners.</p>
+            <h1>Expert HVAC Services in the Antelope Valley</h1>
+            <p>From emergency AC repairs to energy-efficient furnace installations, we provide honest, high-quality
+                heating and air conditioning services for homeowners.</p>
             <div class="hero-btns">
                 <a href="/contact/" class="btn btn-primary">Request a Free Estimate</a>
                 <a href="#services-grid" class="btn btn-secondary">Explore Our Services</a>
@@ -58,149 +165,105 @@
         </div>
     </section>
 
-    <!-- 2. The AV Tree Pros Difference -->
+    <!-- 2. Why Choose Us -->
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Homeowners Choose AV Tree Pros</h2>
-                <p>We combine arboricultural knowledge with the reliability of a local, owner-operated business.</p>
+                <h2>Why Homeowners Choose Working Class HVAC</h2>
+                <p>We combine technical expertise with the reliability of a local, owner-operated business.</p>
             </div>
             <div class="features-grid grid-balance-4">
                 <div class="feature-card">
-                    <i class="fas fa-calendar-check feature-icon"></i>
+                    <i class="fas fa-clock feature-icon"></i>
                     <h3>Reliable Scheduling</h3>
-                    <p>We show up when promised. Whether it's an emergency call or a scheduled trim, you can depend on
-                        our team.</p>
+                    <p>We show up when promised. Whether it's an emergency call or a scheduled tune-up, you can depend
+                        on our team.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-shield-alt feature-icon"></i>
                     <h3>Licensed & Insured</h3>
-                    <p>Tree work can be dangerous. Choose a professional team that protects you and your property.</p>
+                    <p>HVAC work requires expertise. Choose a licensed contractor (C-20 #1024283) that protects you and
+                        your property.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-leaf feature-icon"></i>
+                    <i class="fas fa-temperature-high feature-icon"></i>
                     <h3>High Desert Experts</h3>
-                    <p>We specialize in local trees like Joshua Trees, Palms, and Pines that thrive in our unique
-                        climate.</p>
+                    <p>We know the AV climate. We install systems designed to handle 110°+ summers and freezing winters
+                        efficiently.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-users feature-icon"></i>
-                    <h3>Professional Crew</h3>
-                    <p>Trained specialists who treat your property with respect, ensuring safely controlled drops and
-                        thorough cleanup.</p>
+                    <i class="fas fa-user-check feature-icon"></i>
+                    <h3>Owner-Operated</h3>
+                    <p>Matt oversees every job to ensure quality. You get honest communication and no corporate sales
+                        tactics.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Main Services Grid (Image Based) -->
-    <section class="av-explore-section" id="services-grid" style="background: var(--bg-green-tint);">
+    <!-- 3. Main Services Grid -->
+    <section class="av-explore-section" id="services-grid" style="background: #f8faff;">
         <div class="av-explore-inner">
             <div class="section-title">
                 <h2>Our Professional Services</h2>
-                <p>Click a service below to learn more about our high-desert tree care solutions.</p>
+                <p>Click a service below to learn more about our heating and cooling solutions.</p>
             </div>
             <div class="av-explore-grid">
 
-                <!-- Professional Tree Care -->
-                <a href="/services/tree-care/" class="av-explore-card">
-                    <img src="../images/service-tree-care.png" alt="Tree Health Care">
-                    <div class="av-explore-overlay">
-                        <h3>Professional Tree Care</h3>
-                        <p>Complete health assessments, deep root fertilization, and disease management.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- AC Repair -->
+                <a href="/services/ac-repair/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-snowflake"></i></div>
+                    <h3>AC Repair & Installation</h3>
+                    <p>Fast diagnostics and quality repairs for all AC makes and models.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-                <!-- Emergency Tree Services -->
-                <a href="/services/emergency-service/" class="av-explore-card">
-                    <img src="../images/service-emergency.png" alt="Emergency Tree Services">
-                    <div class="av-explore-overlay">
-                        <h3>Emergency Tree Services</h3>
-                        <p>24/7 Rapid response for storm damage, fallen limbs, and hazardous trees.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- Emergency Service -->
+                <a href="/services/emergency-service/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h3>Emergency Service</h3>
+                    <p>24/7 Rapid response for breakdowns when you need cooling the most.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-                <!-- Palm Tree Trimming -->
-                <a href="/services/palm-trimming/" class="av-explore-card">
-                    <img src="../images/service-palm-trimming.png" alt="Desert Palm Tree Trimming">
-                    <div class="av-explore-overlay">
-                        <h3>Palm Tree Trimming</h3>
-                        <p>Specialized trimming and skinning for Mexican Fan Palms and Date Palms.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- Furnace Repair -->
+                <a href="/services/furnace-repair/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Heating & Furnaces</h3>
+                    <p>Repair, maintenance, and installation of gas furnaces and heat pumps.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-                <!-- Stump Grinding -->
-                <a href="/services/stump-grinding/" class="av-explore-card">
-                    <img src="../images/service-stump-grinding.png" alt="Stump Grinding">
-                    <div class="av-explore-overlay">
-                        <h3>Stump Grinding</h3>
-                        <p>Complete removal of unsightly stumps to reclaim your yard space.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- Maintenance -->
+                <a href="/services/maintenance/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Maintenance Plans</h3>
+                    <p>Prevent breakdowns and extend system life with seasonal tune-ups.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-                <!-- Tree Trimming -->
-                <a href="/services/tree-trimming/" class="av-explore-card">
-                    <img src="../images/service-tree-trimming.png" alt="Tree Trimming">
-                    <div class="av-explore-overlay">
-                        <h3>Tree Trimming</h3>
-                        <p>Professional structural pruning, canopy thinning, and ornamental shaping.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- Air Quality -->
+                <a href="/services/air-quality/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-wind"></i></div>
+                    <h3>Air Quality Services</h3>
+                    <p>Filtration, humidifiers, and duct cleaning for healthier home air.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-                <!-- Tree Removal -->
-                <a href="/services/tree-removal/" class="av-explore-card">
-                    <img src="../images/service-tree-removal.png" alt="Tree Removal">
-                    <div class="av-explore-overlay">
-                        <h3>Tree Removal</h3>
-                        <p>Safe removal of large, dead, or unwanted trees using crane-assisted techniques.</p>
-                        <div class="av-explore-link">View Service</div>
-                    </div>
+                <!-- Ductwork -->
+                <a href="/services/ductwork/" class="av-explore-card"
+                    style="box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="av-card-icon"><i class="fas fa-fan"></i></div>
+                    <h3>Ductwork Services</h3>
+                    <p>Repair and replacement of leaky ducts to improve efficiency.</p>
+                    <div class="av-explore-link">View Service</div>
                 </a>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Meet Your Local Specialist -->
-    <section class="av-palmdale-tech">
-        <h2>Expertise You Can Trust</h2>
-        <p class="av-palmdale-tech-intro">
-            At AV Tree Pros, you're not just getting a crew—you're getting a locally owned service dedicated to the
-            health and safety of your trees.
-        </p>
-
-        <div class="av-palmdale-tech-grid">
-            <!-- IMAGE -->
-            <div class="av-palmdale-tech-photo">
-                <img src="../images/brian-yard-care.png" alt="Brian, local tree specialist with AV Tree Pros">
-            </div>
-
-            <!-- TEXT -->
-            <div>
-                <div class="av-palmdale-tech-quote">
-                    “I personally oversee every major project to ensure our high safety standards are met.”
-                </div>
-
-                <div class="av-palmdale-tech-copy">
-                    We know that trusting someone with your property is a big decision. That's why we focus on
-                    <strong>clear communication, honest pricing, and professional results</strong>. Whether it's a
-                    routine trim or a complex removal, we treat your property with care.
-                </div>
-
-                <div class="av-palmdale-tech-points">
-                    <div class="av-palmdale-tech-point"><span>✔</span> Owner-operated for maximum accountability</div>
-                    <div class="av-palmdale-tech-point"><span>✔</span> Specialized in large and hazardous removals</div>
-                    <div class="av-palmdale-tech-point"><span>✔</span> Thorough cleanup after every job</div>
-                </div>
-
-                <a href="tel:6614984444" class="av-palmdale-tech-cta">
-                    Speak with a Specialist
-                </a>
             </div>
         </div>
     </section>
@@ -222,8 +285,8 @@
                             <small>West Palmdale</small>
                         </div>
                     </div>
-                    <p>“They removed a huge pine tree that was leaning over our roof. Fast, safe, and they cleaned up
-                        everything perfectly.”</p>
+                    <p>“They replaced our AC unit right before the heatwave. The price was fair and the installation was
+                        flawless.”</p>
                 </div>
 
                 <div class="av-palmdale-review-card">
@@ -234,8 +297,8 @@
                             <small>Lancaster</small>
                         </div>
                     </div>
-                    <p>“Great job skinning our palm trees. They look like they belong at a resort now. Highly
-                        recommend!”</p>
+                    <p>“Matt was great. He fixed our furnace quickly and didn't try to sell us a whole new system like
+                        the other guys.”</p>
                 </div>
 
                 <div class="av-palmdale-review-card">
@@ -246,143 +309,23 @@
                             <small>Quartz Hill</small>
                         </div>
                     </div>
-                    <p>“Professional service. They came out for an emergency after the wind storm and cleared our
-                        driveway in no time.”</p>
-                </div>
-
-                <!-- Duplicate for loop -->
-                <div class="av-palmdale-review-card">
-                    <div class="av-palmdale-review-head">
-                        <div class="av-palmdale-review-icon">✓</div>
-                        <div>
-                            <strong>Amanda R.</strong><br>
-                            <small>West Palmdale</small>
-                        </div>
-                    </div>
-                    <p>“They removed a huge pine tree that was leaning over our roof. Fast, safe, and they cleaned up
-                        everything perfectly.”</p>
+                    <p>“Professional service. They came out on a Sunday when our AC died. Life savers!”</p>
                 </div>
             </div>
         </div>
 
         <div class="av-palmdale-review-cta">
-            <a href="tel:6614984444">Get My Free Quote</a>
+            <a href="tel:6614948075">Get My Free Quote</a>
         </div>
     </section>
 
-    <!-- 7. Service Areas -->
-    <section class="av-palmdale-service-area">
-        <div class="av-palmdale-inner">
-            <h2>Serving the Entire Antelope Valley</h2>
-            <p class="av-palmdale-intro">
-                We provide professional tree care to residential communities throughout Palmdale, Lancaster, and
-                the surrounding High Desert region.
-            </p>
 
-            <div class="av-palmdale-area-grid">
-                <!-- MAP CARD -->
-                <div class="av-palmdale-card">
-                    <div class="av-palmdale-map-wrap">
-                        <img src="../images/service-tree-care.png" alt="AV Tree Pros serving the Antelope Valley">
-                    </div>
-
-                    <div class="av-palmdale-map-copy">
-                        <h3>Local High Desert Experts</h3>
-                        <p>
-                            We know the regulations and tree species of the AV. Trust a local team.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- AREAS CARD -->
-                <div class="av-palmdale-card">
-                    <h3>Communities We Serve</h3>
-                    <ul class="av-palmdale-area-list">
-                        <li>Palmdale, CA</li>
-                        <li>Lancaster, CA</li>
-                        <li>Quartz Hill</li>
-                        <li>Westside Palmdale</li>
-                        <li>Eastside Lancaster</li>
-                        <li>Rosamond</li>
-                        <li>Lake Los Angeles</li>
-                        <li>Littlerock</li>
-                        <li>Pearblossom</li>
-                        <li>Sun Village</li>
-                    </ul>
-
-                    <p style="margin-top:22px; font-size:15.5px; color:var(--text-light); text-align:center;">
-                        Don’t see your area listed?<br>
-                        <strong>Call us—we likely service your neighborhood.</strong>
-                    </p>
-                </div>
-            </div>
-
-            <div class="av-palmdale-area-cta">
-                <a href="tel:6614984444">Check Availability in My Area</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. Pricing Overview -->
-    <section class="av-pricing-section">
-        <div class="av-pricing-inner">
-            <h2>Fair Pricing for Every Job</h2>
-            <p class="av-pricing-intro">
-                Clear comparisons and honest estimates for your tree care needs.
-            </p>
-
-            <div class="av-pricing-grid">
-                <!-- Health Care -->
-                <div class="av-pricing-card">
-                    <h3>Tree Health Care</h3>
-                    <p class="av-pricing-price">$99 <span>/visit+</span></p>
-                    <p class="av-pricing-desc">Inspections, fertilization, and preventative care.</p>
-                    <ul class="av-pricing-features">
-                        <li>Health Assessment</li>
-                        <li>Deep Root Feeding</li>
-                        <li>Disease Management</li>
-                    </ul>
-                    <a href="tel:6614984444" class="av-pricing-cta">Get Started</a>
-                </div>
-
-                <!-- Trimming -->
-                <div class="av-pricing-card featured">
-                    <span class="av-pricing-badge">Most Popular</span>
-                    <h3>Trimming & Pruning</h3>
-                    <p class="av-pricing-price">Custom <span>Quote</span></p>
-                    <p class="av-pricing-desc">Professional structural pruning for tree health and safety.</p>
-                    <ul class="av-pricing-features">
-                        <li>Canopy Thinning</li>
-                        <li>Hazard Reduction</li>
-                        <li>Deadwood Removal</li>
-                        <li>Palm Trimming</li>
-                    </ul>
-                    <a href="tel:6614984444" class="av-pricing-cta">Get an Estimate</a>
-                </div>
-
-                <!-- Removal -->
-                <div class="av-pricing-card">
-                    <h3>Tree Removal</h3>
-                    <p class="av-pricing-price">Custom <span>Quote</span></p>
-                    <p class="av-pricing-desc">Safe removal of unwanted or dangerous trees.</p>
-                    <ul class="av-pricing-features">
-                        <li>Full Removal</li>
-                        <li>Crane Services</li>
-                        <li>Stump Grinding</li>
-                        <li>Debris Hauling</li>
-                    </ul>
-                    <a href="tel:6614984444" class="av-pricing-cta">Book Consultation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. FAQ -->
+    <!-- FAQ -->
     <section class="avyard-faq">
         <div class="avyard-faq-inner">
-            <h2>Tree Services FAQs</h2>
+            <h2>HVAC Services FAQs</h2>
             <p class="avyard-faq-lead">
-                Find answers to common questions about our tree services in the Antelope Valley.
+                Find answers to common questions about heating and cooling in the Antelope Valley.
             </p>
 
             <div class="faq-grid">
@@ -393,40 +336,28 @@
                 </div>
 
                 <div class="faq-item">
-                    <h3>Do you offer emergency services?</h3>
-                    <p>Yes. We have a 24/7 emergency response team for storm damage and fallen trees that pose immediate
-                        hazards.</p>
+                    <h3>Do you offer emergency AC repair?</h3>
+                    <p>Yes. We have a 24/7 emergency response team for when your system breaks down during extreme
+                        weather.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>How much does tree removal cost?</h3>
-                    <p>Cost varies greatly by tree size, location, and condition. We provide free, no-obligation
-                        estimates to give you an accurate price.</p>
+                    <h3>How much does a new AC unit cost?</h3>
+                    <p>Cost varies by home size and efficiency rating. We provide free, no-obligation estimates to give
+                        you an accurate price for a system that fits your budget.</p>
                 </div>
 
                 <div class="faq-item">
-                    <h3>Is your crew insured?</h3>
-                    <p>Yes. AV Tree Pros is a fully insured business. We take every precaution to ensure safety during
-                        potentially dangerous tree work.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Can you save a sick tree?</h3>
-                    <p>In many cases, yes. Our Professional Tree Care service includes health assessments and treatments
-                        designed to save trees whenever possible.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h3>Do you haul away the wood?</h3>
-                    <p>Yes, all standard quotes include full cleanup and debris hauling. We can also leave wood for you
-                        if requested.</p>
+                    <h3>Are you licensed and insured?</h3>
+                    <p>Yes. Working Class HVAC is a fully licensed C-20 HVAC Contractor (#1024283). We are insured for
+                        your protection.</p>
                 </div>
             </div>
 
             <!-- FAQ CTA -->
             <div class="faq-cta">
-                <a href="tel:6614984444" class="btn btn-primary"
-                    style="padding: 16px 40px; font-size: 1.1rem; border: 3px solid var(--primary-gold);">
+                <a href="tel:6614948075" class="btn btn-primary"
+                    style="padding: 16px 40px; font-size: 1.1rem; border: 3px solid var(--accent-red);">
                     Contact Us with More Questions
                 </a>
             </div>
@@ -460,12 +391,12 @@
             <div class="aw-footer-services">
                 <h4>Our Services</h4>
                 <ul>
-                    <li><a href="/services/tree-care/">AC Repair & Installation</a></li>
+                    <li><a href="/services/ac-repair/">AC Repair & Installation</a></li>
                     <li><a href="/services/emergency-service/">Emergency HVAC Service</a></li>
-                    <li><a href="/services/palm-trimming/">Furnace Installation</a></li>
-                    <li><a href="/services/stump-grinding/">Heating & Cooling</a></li>
-                    <li><a href="/services/tree-trimming/">Air Quality Services</a></li>
-                    <li><a href="/services/tree-removal/">Maintenance Plans</a></li>
+                    <li><a href="/services/furnace-repair/">Furnace Installation</a></li>
+                    <li><a href="/services/heating-cooling/">Heating & Cooling</a></li>
+                    <li><a href="/services/air-quality/">Air Quality Services</a></li>
+                    <li><a href="/services/maintenance/">Maintenance Plans</a></li>
                 </ul>
             </div>
 

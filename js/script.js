@@ -1,6 +1,6 @@
 // Basic interactions scripts
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('AV Tree Pros site loaded');
+    console.log('Working Class HVAC site loaded');
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -67,22 +67,62 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Comparison Slider Logic (New Range Input Method)
-    document.querySelectorAll('.av-yard-ba-slider').forEach(slider => {
-        const range = slider.querySelector('.av-yard-range');
-        const after = slider.querySelector('.av-yard-after');
-        const divider = slider.querySelector('.av-yard-divider');
-        const handle = slider.querySelector('.av-yard-handle');
+    // Service Popup Logic
+    const popupClosedTime = localStorage.getItem('wc_popup_closed');
+    const now = new Date().getTime();
+    const fiveMinutes = 5 * 60 * 1000;
 
-        function update(val) {
-            after.style.clipPath = `inset(0 0 0 ${val}%)`;
-            divider.style.left = val + '%';
-            handle.style.left = val + '%';
+    if (!popupClosedTime || (now - popupClosedTime > fiveMinutes)) {
+        setTimeout(showServicePopup, 15000); // 15 seconds
+    }
+
+    function showServicePopup() {
+        // Prevent multiple popups
+        if (document.querySelector('.service-popup-overlay')) return;
+
+        const popupHTML = `
+            <div class="service-popup">
+                <div class="popup-close-x" id="popup-close-x">&times;</div>
+                <div class="popup-header">
+                    <div class="popup-icon">❄️</div>
+                    <h2>Don't Lose Your Cool!</h2>
+                </div>
+                <div class="popup-body">
+                    <p>Our technicians are in the neighborhood! Grab a priority slot before they fill up.</p>
+                    <a href="tel:6614948075" class="btn popup-btn-call">
+                        <i class="fas fa-phone"></i> Call Tech Now
+                    </a>
+                    <div class="popup-close-link" id="popup-close-link">No thanks, I'm good</div>
+                </div>
+            </div>
+        `;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'service-popup-overlay';
+        overlay.innerHTML = popupHTML;
+        document.body.appendChild(overlay);
+
+        // Animation in
+        setTimeout(() => {
+            overlay.classList.add('active');
+        }, 10);
+
+        // Close Handlers
+        function closePopup() {
+            overlay.classList.remove('active');
+            localStorage.setItem('wc_popup_closed', new Date().getTime());
+            setTimeout(() => {
+                overlay.remove();
+            }, 400); // Wait for transition
         }
 
-        if (range && after && divider && handle) {
-            update(range.value);
-            range.addEventListener('input', e => update(e.target.value));
-        }
-    });
+        document.getElementById('popup-close-x').addEventListener('click', closePopup);
+        document.getElementById('popup-close-link').addEventListener('click', closePopup);
+
+        // Close on outside click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closePopup();
+        });
+    }
+
 });
