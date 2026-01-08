@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="tel:6614948075" class="btn popup-btn-call">
                         <i class="fas fa-phone"></i> Call Tech Now
                     </a>
-                    <div class="popup-close-link" id="popup-close-link">No thanks, I'm good</div>
+                    <div class="popup-close-link" id="popup-close-link" style="color: #60a5fa;">No thanks, I'm cool</div>
                 </div>
             </div>
         `;
