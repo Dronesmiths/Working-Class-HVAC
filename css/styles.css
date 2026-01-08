@@ -2155,9 +2155,22 @@ footer {
     text-align: center;
     font-size: 40px;
     font-weight: 800;
-    color: var(--primary-green);
+    color: var(--primary-blue);
     margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
 }
+
+.av-explore-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-red);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
 
 .av-explore-grid {
     display: grid;
