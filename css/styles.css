@@ -1675,8 +1675,20 @@ footer {
     text-align: center;
     font-size: 36px;
     font-weight: 800;
-    color: var(--primary-dark);
+    color: var(--primary-blue);
     margin-bottom: 14px;
+    position: relative;
+    display: inline-block;
+}
+
+.av-palmdale-testimonials h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-red);
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .av-palmdale-testimonials p.av-palmdale-intro {
