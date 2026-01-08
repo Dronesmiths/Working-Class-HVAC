@@ -2378,6 +2378,31 @@ footer {
     line-height: 1.6;
 }
 
+/* Service Area Heading */
+.av-palmdale-service-area h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.av-palmdale-service-area h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-red);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.av-palmdale-inner {
+    text-align: center;
+}
+
 .popup-btn-call {
     display: flex;
     align-items: center;
