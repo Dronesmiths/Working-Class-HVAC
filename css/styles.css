@@ -1679,6 +1679,12 @@ footer {
     margin-bottom: 14px;
     position: relative;
     display: inline-block;
+    /* Ensure it doesn't take full width if we want inline behavior for the underline */
+}
+
+/* Ensure the parent centers this inline-block element */
+.av-palmdale-testimonials {
+    text-align: center;
 }
 
 .av-palmdale-testimonials h2::after {
