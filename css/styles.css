@@ -1,14 +1,28 @@
 :root {
-    /* Waste Management Inspired Theme */
-    --primary-green: #00713D;
-    --primary-dark: #004d29;
-    --accent-yellow: #FFD200;
-    --text-dark: #1A1A1A;
-    --text-light: #666666;
+    /* Working Class America Theme - Blue Collar Industrial */
+    --primary-blue: #1E3A8A;
+    /* Deep Navy Blue - reliability, trust */
+    --primary-dark: #0F172A;
+    /* Slate Dark - strength, professionalism */
+    --accent-orange: #F97316;
+    /* Safety Orange - energy, action */
+    --accent-yellow: #FCD34D;
+    /* Construction Yellow - visibility, caution */
+    --steel-gray: #64748B;
+    /* Steel Gray - industrial, modern */
+    --text-dark: #1E293B;
+    /* Charcoal - readability */
+    --text-light: #64748B;
+    /* Medium Gray */
     --white: #ffffff;
-    --bg-light: #F9F9F9;
-    --bg-green-tint: #E8F5E9;
-    /* Light green for sections */
+    --bg-light: #F8FAFC;
+    /* Light Slate */
+    --bg-blue-tint: #EFF6FF;
+    /* Light Blue tint for sections */
+
+    /* Legacy color mappings for compatibility */
+    --primary-green: var(--primary-blue);
+    --primary-gold: var(--accent-orange);
 
     /* Fonts */
     --font-heading: 'Poppins', sans-serif;
