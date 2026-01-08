@@ -37,16 +37,6 @@
 
     <link rel="stylesheet" href="../css/styles.css?v=1.8">
     <style>
-        /* Specific Blog Styles - can be moved to styles.css later */
-        .page-hero {
-            padding: 120px 0 80px;
-            background: linear-gradient(rgba(0, 61, 165, 0.9), rgba(26, 26, 26, 0.9)), url('../images/hero-home-matt.png');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-        }
-
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -179,7 +169,8 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="hero page-hero"
+        style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../images/hero-home-matt.png'); background-position: center; background-size: cover;">
         <div class="container">
             <h1>HVAC Tips & Insights</h1>
             <p>Expert advice for keeping your home comfortable and your energy bills low.</p>
