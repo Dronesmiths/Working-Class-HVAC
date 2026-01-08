@@ -121,6 +121,7 @@ header .container {
     z-index: 1001;
     /* Border effect for better visibility */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display: block;
 }
 
 .logo span {
@@ -128,6 +129,29 @@ header .container {
     /* Ensure the border effect applies here too, inheriting or reinforcing */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+/* Logo Image Styles */
+.logo-image {
+    text-shadow: none;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 50px;
+    }
+}
+
 
 /* Desktop Navigation */
 nav ul {
