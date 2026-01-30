@@ -70,5 +70,70 @@ After pushing changes:
 
 ---
 
+## Troubleshooting
+
+### 500 Internal Server Error
+
+If you encounter a **500 Internal Server Error** when accessing the site:
+
+#### Possible Causes:
+1. **Git Deployment Not Configured in cPanel**
+   - Log into your Bluehost cPanel
+   - Navigate to **Git Version Control**
+   - Ensure the repository is properly linked and deployment is enabled
+   
+2. **Incorrect Deployment Path**
+   - Verify the path in `.cpanel.yml` matches your actual cPanel directory structure
+   - The current path is: `/home1/spreaeb3/public_html/website_b823468b/`
+   - You may need to adjust this to point to your domain's root directory
+
+3. **File Permissions**
+   - HTML files should be `644` (readable by all, writable by owner)
+   - Directories should be `755` (executable/searchable by all)
+   - Check permissions in cPanel File Manager
+
+4. **PHP Errors** (if using PHP files)
+   - Check cPanel Error Logs for specific PHP errors
+   - Ensure PHP version compatibility
+
+#### How to Fix:
+
+**Option 1: Check cPanel Git Version Control**
+1. Log into Bluehost cPanel
+2. Go to **Git Version Control** under Files section
+3. Click **Manage** on your repository
+4. Click **Pull or Deploy** → **Deploy HEAD Commit**
+5. Check for any error messages
+
+**Option 2: Verify Deployment Path**
+1. In cPanel, go to **File Manager**
+2. Navigate to `public_html`
+3. Verify the `website_b823468b` directory exists
+4. If your domain should point to a different directory, update `.cpanel.yml`
+
+**Option 3: Manual File Upload Test**
+1. Upload `deploy-test.html` manually via cPanel File Manager
+2. Try accessing it directly: `https://workingclasshvac.com/deploy-test.html`
+3. If it works manually but not via Git, the issue is with Git deployment configuration
+
+**Option 4: Check Error Logs**
+1. In cPanel, go to **Metrics** → **Errors**
+2. Look for recent 500 errors
+3. The error log will show the specific cause
+
+### Test Pages
+
+Two test pages have been created for deployment verification:
+
+1. **deploy-test.html** - Simple test page (minimal features)
+   - URL: `https://workingclasshvac.com/deploy-test.html`
+   
+2. **test-deployment.html** - Full SEO-optimized test page
+   - URL: `https://workingclasshvac.com/test-deployment.html`
+
+If the simple test works but the full test doesn't, there may be a server configuration issue with certain HTML features.
+
+---
+
 **Last Updated**: January 29, 2026  
-**Deployment Status**: ✅ Active and Verified
+**Deployment Status**: ⚠️ Troubleshooting Required - 500 Error on Test Pages
