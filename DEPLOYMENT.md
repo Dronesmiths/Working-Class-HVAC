@@ -1,31 +1,74 @@
-# Deployment: Bluehost cPanel (Git-Based)
+# Deployment Documentation
 
-This repository is configured for deployment via **Bluehost cPanel**, not AWS S3.
+## Hosting & Deployment Configuration
 
-## Hosting Indication
-The presence of `.cpanel.yml` indicates that a cPanel "Git Version Control" or "Push to Deploy" mechanism is in use.
+### Hosting Provider
+**Bluehost** - cPanel Shared Hosting
 
-**File:** `.cpanel.yml`
+### Domain
+- **Primary Domain**: `workingclasshvac.com`
+- **Nameservers**: Configured to point to Bluehost
+
+### Git Version Control Deployment
+
+#### Repository
+- **GitHub Repository**: `https://github.com/Dronesmiths/Working-Class-HVAC.git`
+- **Branch**: `main`
+
+#### Deployment Method
+This site uses **Bluehost cPanel Git Version Control** for automated deployments.
+
+#### Configuration File
+The `.cpanel.yml` file in the root directory controls the deployment process:
+
 ```yaml
+---
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/spreaeb3/public_html/website_b823468b/
     - /bin/cp -R * $DEPLOYPATH
 ```
 
-## Workflow
-1.  **Develop Locally:** Make changes on your machine.
-2.  **Commit & Push:** Push changes to GitHub (`main` branch).
-    ```bash
-    git add .
-    git commit -m "Update site content"
-    git push origin main
-    ```
-3.  **Deploy (Automatic or Manual):** 
-    -   Depending on your cPanel configuration, Bluehost will either automatically pull these changes or you may need to log in to cPanel and click "Update from Repository" (or a similar "Pull" button) in the Git Version Control section.
-    -   The `.cpanel.yml` script then copies the files to the public `website_b823468b` directory.
+#### Deployment Details
+- **cPanel Account**: `spreaeb3`
+- **Deployment Path**: `/home1/spreaeb3/public_html/website_b823468b/`
+- **Deployment Trigger**: Automatic on Git push to `main` branch
 
-## Current Status
--   **Local Repo:** Connected to `https://github.com/Dronesmiths/Working-Class-HVAC.git`
--   **Branch:** `main` (Synced with remote)
--   **Hosting:** Bluehost (Verified via DNS and config file)
+### How to Deploy Changes
+
+1. **Make changes** to your local files
+2. **Stage changes**: 
+   ```bash
+   git add .
+   ```
+3. **Commit changes**:
+   ```bash
+   git commit -m "Description of changes"
+   ```
+4. **Push to GitHub**:
+   ```bash
+   git push origin main
+   ```
+5. **Bluehost automatically deploys** the changes to the live site via the cPanel Git Version Control integration
+
+### Deployment Verification
+After pushing changes:
+1. Wait 1-2 minutes for cPanel to process the deployment
+2. Visit `https://workingclasshvac.com` to verify changes are live
+3. Clear browser cache if changes don't appear immediately (Cmd+Shift+R on Mac)
+
+### Important Notes
+- All files in the repository root are copied to the deployment path
+- The `.cpanel.yml` file must remain in the repository for automated deployment to work
+- Changes pushed to GitHub will automatically appear on the live site
+- Deployment is triggered by pushes to the `main` branch only
+
+### SEO Configuration
+- **Sitemap**: `https://workingclasshvac.com/sitemap.xml`
+- **Robots.txt**: Configured to allow all crawlers
+- **Meta tags**: Implemented on all pages for optimal SEO
+
+---
+
+**Last Updated**: January 29, 2026  
+**Deployment Status**: ✅ Active and Verified
