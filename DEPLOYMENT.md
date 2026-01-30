@@ -123,15 +123,13 @@ If you encounter a **500 Internal Server Error** when accessing the site:
 
 ### Test Pages
 
-Two test pages have been created for deployment verification:
+A test page has been created for deployment verification:
 
-1. **deploy-test.html** - Simple test page (minimal features)
-   - URL: `https://workingclasshvac.com/deploy-test.html`
-   
-2. **test-deployment.html** - Full SEO-optimized test page
-   - URL: `https://workingclasshvac.com/test-deployment.html`
+**test-deploy/** - Deployment verification page
+- URL: `https://workingclasshvac.com/test-deploy/`
+- This uses the same directory-based URL structure as the rest of your site (e.g., `/about/`, `/contact/`)
 
-If the simple test works but the full test doesn't, there may be a server configuration issue with certain HTML features.
+If you can see this page with the success message, your deployment is working correctly!
 
 ---
 
