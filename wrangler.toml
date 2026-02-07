@@ -1,0 +1,8 @@
+[site]
+bucket = "."
+
+[pages]
+# Pages doesn't use wrangler.toml strictly for all settings yet, but it's good practice.
+# This file is mainly for 'wrangler pages' commands context.
+project_name = "working-class-hvac"
+compatibility_date = "2024-04-03"
