@@ -6,59 +6,112 @@
 
 # Specific Page Redirects
 /contact-us /contact/ 301
+/contact-us/ /contact/ 301
 /about-us /about/ 301
+/about-us/ /about/ 301
 /home / 301
+/home/ / 301
 /pricing / 301
+/pricing/ / 301
 /duct-cleaning /services/ductwork/ 301
+/duct-cleaning/ /services/ductwork/ 301
 
 # Old service paths
 /emergency-hvac-repair-services /services/emergency-service/ 301
+/emergency-hvac-repair-services/ /services/emergency-service/ 301
 /hvac-maintenance-services /services/maintenance/ 301
+/hvac-maintenance-services/ /services/maintenance/ 301
 /heat-pump-installation /services/heating-cooling/ 301
+/heat-pump-installation/ /services/heating-cooling/ 301
 /services/hvac-installation /services/ac-repair/ 301
+/services/hvac-installation/ /services/ac-repair/ 301
 /services/single-service /services/ 301
+/services/single-service/ /services/ 301
 /services-v1/mosquitos /services/ 301
+/services-v1/mosquitos/ /services/ 301
 
 # Cleanup old lead-gen pages
 /f1-financing-1 /contact/ 301
+/f1-financing-1/ /contact/ 301
 /benji-renovate-america /contact/ 301
+/benji-renovate-america/ /contact/ 301
 /hero-renovate-america-1 /contact/ 301
+/hero-renovate-america-1/ /contact/ 301
 
 # Blog and Feed Cleanups
 /blog/hvac-financing-and-payment-plans /blog/ 301
+/blog/hvac-financing-and-payment-plans/ /blog/ 301
+/blog/climate-control-on-a-budget-affordable-hvac-solutions/ /blog/ 301
+/blog/the-cooler-home-advances-in-refrigeration-and-ac-tech/ /blog/ 301
+/blog/beating-palmdales-heat-summer-cooling-strategies/ /blog/ 301
+/blog/the-benefits-of-energy-efficient-hvac-systems-in-rosamond/ /blog/ 301
 /category/* /blog/ 301
 /comments/* /blog/ 301
+/trademarks-policy* /privacy/ 301
+/policies/legal-disclaimer-policy* /privacy/ 301
 
 # Location specific legacy redirects
 /locations/glendale / 301
+/locations/glendale/ / 301
 /locations/woodland-hills / 301
+/locations/woodland-hills/ / 301
 /locations/san-bernardino / 301
+/locations/san-bernardino/ / 301
 /locations/rancho-cucamonga / 301
+/locations/rancho-cucamonga/ / 301
 /locations/valencia / 301
+/locations/valencia/ / 301
 /locations/porter-ranch / 301
+/locations/porter-ranch/ / 301
 /locations/reseda / 301
+/locations/reseda/ / 301
 /locations/chatsworth / 301
+/locations/chatsworth/ / 301
 /locations/encino / 301
+/locations/encino/ / 301
 /locations/san-dimas / 301
+/locations/san-dimas/ / 301
 /locations/chino / 301
+/locations/chino/ / 301
 /locations/calabasas / 301
+/locations/calabasas/ / 301
 /locations/tarzana / 301
+/locations/tarzana/ / 301
 /locations/van-nuys / 301
+/locations/van-nuys/ / 301
 /locations/ontario / 301
+/locations/ontario/ / 301
 /locations/santa-clarita / 301
+/locations/santa-clarita/ / 301
 /locations/monrovia / 301
+/locations/monrovia/ / 301
 /locations/sherman-oaks / 301
+/locations/sherman-oaks/ / 301
 /locations/pomona / 301
+/locations/pomona/ / 301
 /locations/claremont / 301
+/locations/claremont/ / 301
 /locations/covina / 301
+/locations/covina/ / 301
 /locations/chino-hills / 301
+/locations/chino-hills/ / 301
 /locations/upland / 301
+/locations/upland/ / 301
 /locations/pasadena / 301
+/locations/pasadena/ / 301
 /locations/granada-hills / 301
+/locations/granada-hills/ / 301
 /locations/fontana / 301
+/locations/fontana/ / 301
 /locations/burbank / 301
+/locations/burbank/ / 301
 /locations/rialto / 301
+/locations/rialto/ / 301
 /locations/arcadia / 301
+/locations/arcadia/ / 301
 /locations/leona-valley / 301
+/locations/leona-valley/ / 301
 /locations/northridge / 301
+/locations/northridge/ / 301
 /locations/riverside / 301
+/locations/riverside/ / 301

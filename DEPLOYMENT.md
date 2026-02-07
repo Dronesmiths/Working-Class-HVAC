@@ -176,6 +176,10 @@ This site uses **Cloudflare Wrangler CLI** for deployments, replacing the previo
 - **`functions/_middleware.js`**: A Cloudflare Pages Function that handles legacy date-based blog URLs (e.g., `/2024/05/15/slug/`) by redirecting them to the new `/blog/slug/` structure.
 - **`.gitignore`**: Excludes `node_modules`, `.wrangler`, and other non-production files from the deployment.
 
+<<<<<<< HEAD
 ### Legacy Configuration (Bluehost) - DEPRECATED
 The `.cpanel.yml` file has been removed, and `.htaccess` has been renamed to `.htaccess.bak` as they are no longer used for deployment or routing.
 >>>>>>> 9ebd11a (lol)
+=======
+
+>>>>>>> 2f1e601 (Accessibility: Add main tags and improved contrast)
