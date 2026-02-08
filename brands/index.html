@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://workingclasshvac.com/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://workingclasshvac.com/apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC Brands We Service | Working Class HVAC Lancaster</title>
+    <meta name="description"
+        content="Expert repair and installation for all major HVAC brands in Lancaster and Palmdale. Carrier, Trane, Lennox, Goodman, Rheem, York, and more.">
+    <link rel="canonical" href="https://workingclasshvac.com/brands/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/styles.css?v=1.8">
+
+    <style>
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .brand-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .service-list {
+            margin-top: 50px;
+        }
+
+        .service-list h3 {
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .service-list ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .service-list li {
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="/" class="logo logo-simple">
+                <span class="wc-text">Working Class</span>
+                <span class="hvac-text">HVAC</span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:6614948075" class="phone-link mobile-hide"><i class="fas fa-phone" aria-hidden="true"></i>
+                    (661) 494-8075</a>
+                <a href="/contact/" class="btn btn-primary">Get a Quote</a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero page-hero"
+        style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../images/hero-home-matt.webp'); background-position: center; background-size: cover;">
+        <div class="container">
+            <h1>Brands We Service</h1>
+            <p>Our expert technicians are trained to repair and install all major HVAC makes and models.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted Manufacturers</h2>
+                <p>We work with the industry's leading brands to ensure quality and reliability for your home.</p>
+            </div>
+
+            <div class="brand-grid">
+
+                <div class="brand-item">
+                    <div class="brand-name">Carrier</div>
+                    <p class="brand-desc">Authorized repairs and maintenance for Carrier Infinity, Performance, and
+                        Comfort series.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">Trane</div>
+                    <p class="brand-desc">Expert service for Trane XLi and XR heat pumps and air conditioners.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">Lennox</div>
+                    <p class="brand-desc">Quality repairs for Lennox Dave Lennox Signature, Elite, and Merit series.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">Goodman</div>
+                    <p class="brand-desc">Affordable and reliable service for all Goodman air conditioning and heating
+                        units.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">Rheem</div>
+                    <p class="brand-desc">Certified troubleshooting and repair for Rheem Classic and Prestige series.
+                    </p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">York</div>
+                    <p class="brand-desc">Professional maintenance for York LX and Affinity series systems.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">Bryant</div>
+                    <p class="brand-desc">Comprehensive service for Bryant Evolution and Legacy line systems.</p>
+                </div>
+
+                <div class="brand-item">
+                    <div class="brand-name">American Standard</div>
+                    <p class="brand-desc">Reliable repairs for American Standard Platinum, Gold, and Silver series.</p>
+                </div>
+
+            </div>
+
+            <div class="service-list">
+                <h3>We Also Service:</h3>
+                <ul>
+                    <li>Amana</li>
+                    <li>Daikin</li>
+                    <li>Heil</li>
+                    <li>Payne</li>
+                    <li>Ruud</li>
+                    <li>Day & Night</li>
+                    <li>Mitsubishi Electric (Mini-Splits)</li>
+                    <li>Fujitsu</li>
+                    <li>Coleman</li>
+                    <li>Maytag</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 50px; text-align: center;">
+                <p>Don't see your brand listed? Give us a call &mdash; we likely service it!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="av-explore-section" style="background-color: var(--bg-blue-tint);">
+        <div class="container">
+            <div class="section-title">
+                <h2>System Acting Up?</h2>
+                <p>No matter the brand, our technicians can diagnose and fix the issue fast.</p>
+            </div>
+            <div style="text-align: center;">
+                <a href="tel:6614948075" class="btn btn-primary btn-large">Schedule Repair</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="aw-footer">
+        <div class="container aw-footer-inner">
+            <div class="aw-footer-brand">
+                <h3>Working Class <span>HVAC</span></h3>
+                <p>Licensed HVAC Contractor | License #1024283</p>
+                <p class="aw-footer-phone"><span>📞</span> <a href="tel:6614948075">(661) 494-8075</a></p>
+                <p class="aw-footer-email"><span>✉️</span> <a
+                        href="mailto:WorkingclassAV@yahoo.com">WorkingclassAV@yahoo.com</a></p>
+            </div>
+            <div class="aw-footer-services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="/services/ac-repair/">AC Repair</a></li>
+                    <li><a href="/services/furnace-repair/">Furnace Repair</a></li>
+                    <li><a href="/services/air-quality/">Air Quality</a></li>
+                    <li><a href="/services/maintenance/">Maintenance</a></li>
+                </ul>
+            </div>
+            <div class="aw-footer-locations">
+                <h4>Top Areas</h4>
+                <ul>
+                    <li><a href="/locations/lancaster/">Lancaster, CA</a></li>
+                    <li><a href="/locations/palmdale/">Palmdale, CA</a></li>
+                    <li><a href="/locations/quartz-hill/">Quartz Hill</a></li>
+                    <li><a href="/locations/westside-palmdale/">West Palmdale</a></li>
+                    <li><a href="/locations/eastside-lancaster/">East Lancaster</a></li>
+                    <li><a href="/locations/rosamond/">Rosamond</a></li>
+                    <li><a href="/locations/lake-los-angeles/">Lake Los Angeles</a></li>
+                    <li><a href="/locations/littlerock/">Littlerock</a></li>
+                    <li><a href="/locations/pearblossom/">Pearblossom</a></li>
+                    <li><a href="/locations/sun-village/">Sun Village</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="aw-footer-bottom">
+            <p>© <span id="year"></span> Working Class Heating & Air. All rights reserved. | <a
+                    href="/sitemap.xml">Sitemap</a> | <a href="/privacy/">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

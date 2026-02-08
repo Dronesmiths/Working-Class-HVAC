@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://workingclasshvac.com/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://workingclasshvac.com/apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC Coupons & Specials | Working Class HVAC Lancaster</title>
+    <meta name="description"
+        content="Current HVAC coupons and special offers for Lancaster, Palmdale, and the Antelope Valley. Save on AC repair, furnace tune-ups, and new system installations.">
+    <link rel="canonical" href="https://workingclasshvac.com/specials/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/styles.css?v=1.8">
+
+    <style>
+        .coupon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .coupon-card {
+            background: #fff;
+            border: 2px dashed var(--accent-red);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .coupon-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .coupon-amount {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .coupon-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .coupon-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .coupon-disclaimer {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .print-btn {
+            background: var(--primary-blue);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: #003366;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="/" class="logo logo-simple">
+                <span class="wc-text">Working Class</span>
+                <span class="hvac-text">HVAC</span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:6614948075" class="phone-link mobile-hide"><i class="fas fa-phone" aria-hidden="true"></i>
+                    (661) 494-8075</a>
+                <a href="/contact/" class="btn btn-primary">Get a Quote</a>
+                <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero page-hero"
+        style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../images/hero-home-matt.webp'); background-position: center; background-size: cover;">
+        <div class="container">
+            <h1>Special Offers & Coupons</h1>
+            <p>Save money on expert HVAC services for your home. Honest pricing, real value.</p>
+        </div>
+    </section>
+
+    <!-- Coupons Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current Deals</h2>
+                <p>Mention these coupons when you call to claim your discount.</p>
+            </div>
+
+            <div class="coupon-grid">
+
+                <!-- Coupon 1 -->
+                <div class="coupon-card">
+                    <div class="coupon-amount">$89</div>
+                    <div class="coupon-title">Seasonal AC Tune-Up</div>
+                    <p class="coupon-desc">Get your system ready for summer. Includes 21-point safety check, coil
+                        inspection, and refrigerant level check.</p>
+                    <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print
+                        Coupon</button>
+                    <p class="coupon-disclaimer">Valid for residential customers only. Cannot be combined with other
+                        offers.</p>
+                </div>
+
+                <!-- Coupon 2 -->
+                <div class="coupon-card">
+                    <div class="coupon-amount">$500 OFF</div>
+                    <div class="coupon-title">New System Installation</div>
+                    <p class="coupon-desc">Save on a complete heating and cooling system replacement. Energy-efficient
+                        upgrades available.</p>
+                    <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print
+                        Coupon</button>
+                    <p class="coupon-disclaimer">Minimum purchase required. Must present coupon at time of estimate.</p>
+                </div>
+
+                <!-- Coupon 3 -->
+                <div class="coupon-card">
+                    <div class="coupon-amount">FREE</div>
+                    <div class="coupon-title">Second Opinion</div>
+                    <p class="coupon-desc">Quoted for a major repair or replacement? Let us give you an honest second
+                        opinion for free.</p>
+                    <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print
+                        Coupon</button>
+                    <p class="coupon-disclaimer">Must provide written estimate from another licensed contractor.</p>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">Don't see what you need? Call us for our latest
+                    unadvertised specials!</p>
+                <a href="tel:6614948075" class="btn btn-primary btn-large">Call (661) 494-8075</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Teaser -->
+    <section class="av-explore-section" style="background-color: #f8faff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Need Payment Options?</h2>
+                <p>We offer flexible financing to make your new comfort system affordable.</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="max-width: 600px; margin: 0 auto 30px;">
+                    Don't let budget constraints keep you from being comfortable. We partner with top lenders to offer
+                    low monthly payments and 0% interest options for qualified buyers.
+                </p>
+                <a href="/financing/" class="btn btn-secondary">View Financing Options</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="aw-footer">
+        <div class="container aw-footer-inner">
+            <div class="aw-footer-brand">
+                <h3>Working Class <span>HVAC</span></h3>
+                <p>Licensed HVAC Contractor | License #1024283</p>
+                <p class="aw-footer-phone"><span>📞</span> <a href="tel:6614948075">(661) 494-8075</a></p>
+                <p class="aw-footer-email"><span>✉️</span> <a
+                        href="mailto:WorkingclassAV@yahoo.com">WorkingclassAV@yahoo.com</a></p>
+            </div>
+            <div class="aw-footer-services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="/services/ac-repair/">AC Repair</a></li>
+                    <li><a href="/services/furnace-repair/">Furnace Repair</a></li>
+                    <li><a href="/services/air-quality/">Air Quality</a></li>
+                    <li><a href="/services/maintenance/">Maintenance</a></li>
+                </ul>
+            </div>
+            <div class="aw-footer-locations">
+                <h4>Top Areas</h4>
+                <ul>
+                    <li><a href="/locations/lancaster/">Lancaster, CA</a></li>
+                    <li><a href="/locations/palmdale/">Palmdale, CA</a></li>
+                    <li><a href="/locations/quartz-hill/">Quartz Hill</a></li>
+                    <li><a href="/locations/westside-palmdale/">West Palmdale</a></li>
+                    <li><a href="/locations/eastside-lancaster/">East Lancaster</a></li>
+                    <li><a href="/locations/rosamond/">Rosamond</a></li>
+                    <li><a href="/locations/lake-los-angeles/">Lake Los Angeles</a></li>
+                    <li><a href="/locations/littlerock/">Littlerock</a></li>
+                    <li><a href="/locations/pearblossom/">Pearblossom</a></li>
+                    <li><a href="/locations/sun-village/">Sun Village</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="aw-footer-bottom">
+            <p>© <span id="year"></span> Working Class Heating & Air. All rights reserved. | <a
+                    href="/sitemap.xml">Sitemap</a> | <a href="/privacy/">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
