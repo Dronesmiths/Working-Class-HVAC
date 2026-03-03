@@ -1,12 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+const maps = require('./map-utils');
 
 /**
  * Utility for enriching HVAC articles with local data, stats, and maps.
  */
 
-async function getEnrichedContent(title, pillar, location = "Lancaster, CA") {
+async function getEnrichedContent(title, pillar, location = "Lancaster, CA", mapsApiConfig = {}) {
     console.log(`[AI-Enrich] Generating high-quality content for: ${title}`);
+
+    const { apiKey, placeId, flags, businessAddress } = mapsApiConfig;
+
+    // ... (statsHtml and tableHtml remain same)
 
     // 1. Data-Driven Stat Block (Stubbed with representative HVAC data for Lancaster)
     const statsHtml = `
@@ -60,11 +63,23 @@ async function getEnrichedContent(title, pillar, location = "Lancaster, CA") {
 `;
 
     // 3. Map Utility (Integrating with user's enabled Maps API)
-    const mapEmbedHtml = `
-<div class="map-feature" style="margin: 30px 0; border-radius: 12px; overflow: hidden; background: #eee; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">
-    <p style="color: #666;">Google Map and Places Data Layer Integrated</p>
+    let mapEmbedHtml = '';
+    if (apiKey) {
+        if (flags.show_live_map) mapEmbedHtml += maps.generateMapEmbed(apiKey, location);
+        if (flags.show_static_map) mapEmbedHtml += maps.generateStaticMap(apiKey, location);
+        if (flags.show_street_view) mapEmbedHtml += maps.generateStreetView(apiKey, location);
+        if (flags.show_directions) mapEmbedHtml += maps.generateDirectionsLink(location, businessAddress);
+        if (flags.show_reviews && placeId) mapEmbedHtml += maps.generatePlaceReview(apiKey, placeId);
+    } else {
+        mapEmbedHtml = `
+<div class="map-feature" style="margin: 30px 0; border-radius: 12px; overflow: hidden; background: #eee; min-height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; padding: 20px;">
+    <div style="text-align: center; color: #666;">
+        <p style="margin-bottom: 10px; font-weight: bold;">Google Maps Data Layer Integrated</p>
+        <p style="font-size: 0.8rem;">(Waiting for API verification to activate live view)</p>
+    </div>
 </div>
 `;
+    }
 
     // 4. Narrative Content
     const bodyText = `

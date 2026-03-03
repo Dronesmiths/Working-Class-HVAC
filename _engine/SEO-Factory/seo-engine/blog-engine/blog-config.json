@@ -7,5 +7,14 @@
     "max_new_posts_per_run": 5,
     "lock_ttl_minutes": 30,
     "google_sheet_id": "1Ipagk7rJmuqCooYkGcQfbs81fqHmuyvyj_MDkTRoSZk",
-    "google_sheet_tab_name": "Inventory"
+    "google_sheet_tab_name": "Inventory",
+    "google_maps_api_key": "",
+    "google_place_id": "",
+    "maps_feature_flags": {
+        "show_live_map": true,
+        "show_static_map": false,
+        "show_street_view": true,
+        "show_directions": true,
+        "show_reviews": true
+    }
 }

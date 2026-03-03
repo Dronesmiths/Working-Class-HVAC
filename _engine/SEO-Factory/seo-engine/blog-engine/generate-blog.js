@@ -52,7 +52,14 @@ async function writePlaceholder(dir, url, title, pillar, isCornerstone) {
         footerGuidance = `\n<div class="guidance-box">\n  <p>Need more practical guidance on this? <a href="${guidanceUrl}">Read our Client Newsletter for ${title}</a>.</p>\n</div>`;
     }
 
-    const bodyContent = await getEnrichedContent(title, pillar);
+    const mapsApiConfig = {
+        apiKey: CONFIG.google_maps_api_key,
+        placeId: CONFIG.google_place_id,
+        flags: CONFIG.maps_feature_flags || {},
+        businessAddress: CONFIG.business_address || ""
+    };
+
+    const bodyContent = await getEnrichedContent(title, pillar, "Lancaster, CA", mapsApiConfig);
 
     template = template.replace(/{{title}}/g, title)
         .replace(/{{subtitle}}/g, `Expert insights on ${pillar}`)
