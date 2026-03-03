@@ -1,0 +1,19 @@
+{
+    "name": "Working Class HVAC",
+    "legalName": "Working Class Heating & Air",
+    "license": "C-20 #1024283",
+    "phone": "(661) 494-8075",
+    "email": "WorkingclassAV@yahoo.com",
+    "url": "https://workingclasshvac.com",
+    "address": {
+        "street": "2232 West Ave L",
+        "city": "Lancaster",
+        "state": "CA",
+        "zip": "93536",
+        "lat": 34.6599102,
+        "lng": -118.171233
+    },
+    "social": {
+        "google": "https://www.google.com/maps/place/Working+Class+HVAC/@34.6599102,-118.171233,17z"
+    }
+}

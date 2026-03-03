@@ -1,0 +1,27 @@
+{
+  "company_name": "Working Class HVAC",
+  "domain": "https://workingclasshvac.com",
+  "brand_tone": "honest, hardworking, professional, local",
+  "primary_location": "Lancaster, CA",
+  "services": [
+    "AC Repair & Installation",
+    "Furnace Installation & Repair",
+    "Heating & Cooling Systems",
+    "Indoor Air Quality",
+    "Maintenance Plans"
+  ],
+  "unique_value_props": [
+    "Licensed & Certified (C-20 #1024283)",
+    "Honest Pricing, No Hidden Fees",
+    "24/7 Emergency Service",
+    "Local & Family-Owned since 2010"
+  ],
+  "primary_cta": {
+    "label": "Get a Free Estimate",
+    "url": "https://workingclasshvac.com/contact/"
+  },
+  "secondary_cta": {
+    "label": "Call (661) 494-8075",
+    "url": "tel:6614948075"
+  }
+}

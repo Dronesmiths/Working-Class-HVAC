@@ -1,0 +1,34 @@
+{
+    "pillars": [
+        {
+            "id": "ac-services",
+            "title": "Air Conditioning Services",
+            "slug": "ac-repair",
+            "keywords": [
+                "ac repair",
+                "ac installation",
+                "hvac lancaster"
+            ]
+        },
+        {
+            "id": "heating-services",
+            "title": "Heating Solutions",
+            "slug": "furnace-repair",
+            "keywords": [
+                "furnace repair",
+                "heating installation",
+                "heating lancaster"
+            ]
+        }
+    ],
+    "clusters": [
+        {
+            "pillarId": "ac-services",
+            "topics": [
+                "emergency-ac-repair",
+                "ac-maintenance",
+                "mini-splits"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+# Engine-Specific Ignores
+**/GOOGLE KEYS/
+**/*.lock
+**/.build-lock
+**/logs/*.json
+**/logs/*.txt
+**/node_modules/
+**/ANALYTICS/GSC_PULL.json
+**/ANALYTICS/GSC_CLUSTER.json

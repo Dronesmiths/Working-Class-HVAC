@@ -1,0 +1,36 @@
+{
+    "pillars": [
+        {
+            "name": "Air Conditioning Services",
+            "slug": "ac-repair",
+            "url": "/services/ac-repair/",
+            "target_support_pages": 40,
+            "support_page_types": [
+                "how-to",
+                "faq",
+                "maintenance-guide"
+            ]
+        },
+        {
+            "name": "Heating Solutions",
+            "slug": "furnace-repair",
+            "url": "/services/furnace-repair/",
+            "target_support_pages": 40,
+            "support_page_types": [
+                "safety-guide",
+                "troubleshooting",
+                "installation-checklist"
+            ]
+        },
+        {
+            "name": "Indoor Air Quality",
+            "slug": "air-quality",
+            "url": "/services/air-quality/",
+            "target_support_pages": 40,
+            "support_page_types": [
+                "health-tips",
+                "filtration-guide"
+            ]
+        }
+    ]
+}

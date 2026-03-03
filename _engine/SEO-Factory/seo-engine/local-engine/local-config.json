@@ -1,0 +1,34 @@
+{
+    "mode": "manual",
+    "auto_expand": false,
+    "auto_sitemap_sync": true,
+    "reinforcement_threshold": 15,
+    "domain": "https://workingclasshvac.com",
+    "base_path": "/blog",
+    "geo_intent_keywords": [
+        "near me",
+        "in",
+        "at",
+        "services",
+        "company",
+        "provider"
+    ],
+    "max_new_locations_per_run": 3,
+    "max_new_services_per_location": 5,
+    "max_total_new_pages_per_run": 25,
+    "geo_radius_limit_miles": 40,
+    "lock_ttl_minutes": 30,
+    "assisted_min_keyword_hits": 3,
+    "google_sheet_id": "1Ipagk7rJmuqCooYkGcQfbs81fqHmuyvyj_MDkTRoSZk",
+    "google_sheet_tab_name": "Inventory",
+    "google_maps_api_key": "",
+    "maps_feature_flags": {
+        "show_live_map": true,
+        "show_static_map": false,
+        "show_street_view": true,
+        "show_directions": true,
+        "show_reviews": true
+    },
+    "google_place_id": "",
+    "business_address": ""
+}

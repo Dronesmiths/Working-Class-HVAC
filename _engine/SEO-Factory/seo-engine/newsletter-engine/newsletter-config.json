@@ -1,0 +1,8 @@
+{
+    "mode": "manual",
+    "domain": "https://workingclasshvac.com",
+    "base_path": "/newsletter",
+    "lock_ttl_minutes": 30,
+    "google_sheet_id": "1Ipagk7rJmuqCooYkGcQfbs81fqHmuyvyj_MDkTRoSZk",
+    "google_sheet_tab_name": "Inventory"
+}
