@@ -5,6 +5,7 @@ const { runValidation } = require('./validate');
 const { syncToGoogleSheets } = require('../google-sheets-sync');
 const { syncWithMasterIndex } = require('../sitemap-utils');
 const maps = require('../map-utils');
+const weather = require('../weather-utils');
 
 const BASE_DIR = __dirname;
 const CONFIG = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'local-config.json'), 'utf8'));
@@ -201,12 +202,22 @@ function writePlaceholder(dir, url, title, h1, locationString) {
         if (flags.show_reviews && CONFIG.google_place_id) mapHtml += maps.generatePlaceReview(apiKey, CONFIG.google_place_id);
     }
 
+    // --- WEATHER COMPONENT ---
+    let weatherHtml = '';
+    if (CONFIG.weather_enabled) {
+        // Extract city/state parts
+        const parts = locationString.split(',');
+        const city = parts[0].trim();
+        const state = parts[1] ? parts[1].trim() : 'CA';
+        weatherHtml = weather.generateWeatherSnippet(city, state);
+    }
+
     template = template.replace('{{TITLE}}', title)
         .replace('{{H1}}', h1)
         .replace('{{CANONICAL_URL}}', `${CONFIG.domain}${url}`)
         .replace('{{META_DESCRIPTION}}', `Professional ${h1} in ${title}.`)
         .replace('{{INTRO}}', `Looking for ${h1} in ${title}? We provide top-tier solutions tailored for your needs.`)
-        .replace('{{BODY_SECTIONS}}', `<!-- FACTORY:BODY_START -->\n<div class="content-block">\n    <p>We are proud to serve the ${title} area with professional ${h1} services.</p>\n    ${mapHtml}\n</div>\n<!-- FACTORY:BODY_END -->`)
+        .replace('{{BODY_SECTIONS}}', `<!-- FACTORY:BODY_START -->\n<div class="content-block">\n    <p>We are proud to serve the ${title} area with professional ${h1} services.</p>\n    ${weatherHtml}\n    ${mapHtml}\n</div>\n<!-- FACTORY:BODY_END -->`)
         .replace('{{FAQ_BLOCK}}', '<!-- FACTORY:FAQ_START -->\n<!-- FACTORY:FAQ_END -->')
         .replace('{{CTA_HEADING}}', `Get Started in ${title}`)
         .replace('{{CTA_TEXT}}', 'Contact our team of experts today.')

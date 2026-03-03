@@ -30,5 +30,6 @@
         "show_reviews": true
     },
     "google_place_id": "",
-    "business_address": ""
+    "business_address": "",
+    "weather_enabled": true
 }
