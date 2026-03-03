@@ -3,6 +3,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { syncToGoogleSheets } = require('../google-sheets-sync');
 const { syncWithMasterIndex } = require('../sitemap-utils');
+const { getEnrichedContent } = require('../content-ai');
 
 const BASE_DIR = __dirname;
 const CONFIG = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'blog-config.json'), 'utf8'));
@@ -36,7 +37,7 @@ function normalizeSlug(slug) {
     return slug.toLowerCase().trim().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
-function writePlaceholder(dir, url, title, pillar, isCornerstone) {
+async function writePlaceholder(dir, url, title, pillar, isCornerstone) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
@@ -51,11 +52,13 @@ function writePlaceholder(dir, url, title, pillar, isCornerstone) {
         footerGuidance = `\n<div class="guidance-box">\n  <p>Need more practical guidance on this? <a href="${guidanceUrl}">Read our Client Newsletter for ${title}</a>.</p>\n</div>`;
     }
 
+    const bodyContent = await getEnrichedContent(title, pillar);
+
     template = template.replace(/{{title}}/g, title)
         .replace(/{{subtitle}}/g, `Expert insights on ${pillar}`)
         .replace(/{{canonical_url}}/g, `${CONFIG.domain}${url}`)
         .replace(/{{meta_description}}/g, `Read our latest guide on ${title} within the ${pillar} pillar.`)
-        .replace(/{{content_blocks}}/g, `<!-- FACTORY:BODY_START -->\n<p>Drafting content for this blog post...</p>${footerGuidance}\n<!-- FACTORY:BODY_END -->`)
+        .replace(/{{content_blocks}}/g, `${bodyContent}${footerGuidance}`)
         .replace(/{{cta_label}}/g, 'Get a Free Quote')
         .replace(/{{cta_url}}/g, '/contact/')
         .replace(/{{container_class}}/g, 'container')
@@ -115,7 +118,7 @@ async function build() {
         const maxNew = CONFIG.max_new_posts_per_run || 5;
 
         // Simplified logic for template: Ensure all registry entries exist
-        registry.pages.forEach(page => {
+        for (const page of registry.pages) {
             const nSlug = normalizeSlug(page.slug);
             const url = `${CONFIG.base_path}/${nSlug}/`;
             const dir = path.join(SITE_ROOT, 'blog', nSlug);
@@ -124,11 +127,11 @@ async function build() {
                 if (newPostsCount < maxNew) {
                     console.log(`${DRY_RUN ? '[DRY RUN] Would build' : 'Building'}: ${url}`);
                     const isCornerstone = page.type === 'cornerstone';
-                    writePlaceholder(dir, url, page.title, page.pillar, isCornerstone);
+                    await writePlaceholder(dir, url, page.title, page.pillar, isCornerstone);
                     newPostsCount++;
                 }
             }
-        });
+        }
 
         // Generate Blog Sitemap
         const allUrls = registry.pages.map(p => `${CONFIG.base_path}/${normalizeSlug(p.slug)}/`);
