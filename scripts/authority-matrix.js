@@ -14,13 +14,13 @@ const PILLARS = JSON.parse(fs.readFileSync(path.join(SEO_ENGINE_DIR, 'PILLARS.js
 
 async function generateMatrix() {
     console.log('--- Generating Authority Matrix ---');
-    
+
     const SITE_ROOT = BASE_DIR;
     const cities = ['Lancaster', 'Palmdale', 'Quartz Hill', 'Tehachapi', 'Acton', 'Rosamond', 'Mojave', 'Littlerock', 'California City', 'Lake Los Angeles'];
-    const pillars = PILLARS.map(p => p.name);
+    const pillars = PILLARS.pillars.map(p => p.name);
 
     const matrixData = [];
-    
+
     for (const pillar of pillars) {
         const row = { Pillar: pillar };
         for (const city of cities) {
@@ -64,7 +64,7 @@ function countPages(siteRoot, pillar, city) {
 function getAllHtmlFiles(dirPath, arrayOfFiles) {
     const files = fs.readdirSync(dirPath);
     arrayOfFiles = arrayOfFiles || [];
-    files.forEach(function(file) {
+    files.forEach(function (file) {
         if (fs.statSync(dirPath + "/" + file).isDirectory()) {
             arrayOfFiles = getAllHtmlFiles(dirPath + "/" + file, arrayOfFiles);
         } else if (file === 'index.html') {
