@@ -18,4 +18,7 @@
   <sitemap>
     <loc>https://workingclasshvac.com/sitemap-blog.xml</loc>
   </sitemap>
+  <sitemap>
+    <loc>https://workingclasshvac.com/sitemap-newsletter.xml</loc>
+  </sitemap>
 </sitemapindex>
