@@ -1,3 +1,10 @@
 {
-    "pages": []
+    "pages": [
+        {
+            "slug": "spring-hvac-prep-lancaster-ca",
+            "title": "Spring HVAC Prep Guide for Lancaster Homeowners",
+            "pillar": "Air Conditioning Services",
+            "type": "blog"
+        }
+    ]
 }

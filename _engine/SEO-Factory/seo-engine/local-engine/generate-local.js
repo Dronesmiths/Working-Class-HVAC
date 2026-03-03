@@ -16,7 +16,7 @@ const SITEMAP_PATH = path.join(BASE_DIR, 'sitemap-local.xml');
 const MASTER_SITEMAP_PATH = path.join(BASE_DIR, '..', '..', 'sitemap.xml');
 const SEO_KW_MAP_PATH = path.join(BASE_DIR, '..', 'KW_MAP.json');
 const TEMPLATE_PATH = path.join(BASE_DIR, '..', 'TEMPLATES', 'page-template.html');
-const SITE_ROOT = path.join(BASE_DIR, '..', '..', '..');
+const SITE_ROOT = path.join(BASE_DIR, '..', '..', '..', '..');
 const LOCK_FILE = path.join(BASE_DIR, '.build-lock');
 const SITEMAP_HASH_PATH = path.join(BASE_DIR, 'logs', 'sitemap-hash.txt');
 
