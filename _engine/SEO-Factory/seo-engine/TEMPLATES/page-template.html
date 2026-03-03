@@ -1,31 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TITLE}}</title>
-  <meta name="description" content="{{META_DESCRIPTION}}" />
-  <link rel="canonical" href="{{CANONICAL_URL}}" />
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Global Styles (Relative path based on depth) -->
+  <link rel="stylesheet" href="../../css/styles.css?v=2.0">
 </head>
+
 <body>
 
-  <main style="max-width:900px;margin:0 auto;padding:28px;line-height:1.6;">
-    <h1>{{H1}}</h1>
-    <p>{{INTRO}}</p>
+  <!-- Header (Simplified version for Engine) -->
+  <header>
+    <div class="container">
+      <a href="/" class="logo logo-simple">
+        <span class="wc-text">Working Class</span>
+        <span class="hvac-text">HVAC</span>
+      </a>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    {{BODY_SECTIONS}}
+  <!-- Premium Hero Section -->
+  <section class="hero blog-hero"
+    style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../../images/hvac-technician-lancaster-hero.webp'); background-position: center; background-size: cover;">
+    <div class="container">
+      <h1>{{H1}}</h1>
+      <p>{{INTRO}}</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Frequently Asked Questions</h2>
-      {{FAQ_BLOCK}}
-    </section>
+  <!-- Main Content Area with Sidebar -->
+  <section class="blog-post-content">
+    <div class="container">
+      <div class="blog-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 40px;">
+        <article class="premium-article">
+          {{BODY_SECTIONS}}
 
-    <section style="margin-top:30px;padding:18px;border:1px solid #eee;border-radius:12px;">
-      <h2>{{CTA_HEADING}}</h2>
-      <p>{{CTA_TEXT}}</p>
-      <p><a href="{{CTA_URL}}">{{CTA_LABEL}}</a></p>
-    </section>
-  </main>
+          <section class="faq-section" style="margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px;">
+            <h2>Frequently Asked Questions</h2>
+            {{FAQ_BLOCK}}
+          </section>
+        </article>
+
+        <aside class="blog-sidebar">
+          <div class="sidebar-widget"
+            style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+            <h3 style="margin-top:0; color: #1a73e8;">About Working Class HVAC</h3>
+            <p>We are a family-owned HVAC contractor serving the Antelope Valley. Our mission is to provide honest,
+              high-quality service at fair prices.</p>
+            <a href="/about/" style="color: #1a73e8; font-weight: bold; text-decoration: none;">Learn More →</a>
+          </div>
+
+          <div class="sidebar-widget"
+            style="background: #111; color: #fff; padding: 25px; border-radius: 12px; text-align: center;">
+            <h3 style="color: #fff;">{{CTA_HEADING}}</h3>
+            <p>{{CTA_TEXT}}</p>
+            <a href="{{CTA_URL}}" class="btn btn-primary"
+              style="display: inline-block; background: #1a73e8; color: #fff; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px;">{{CTA_LABEL}}</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="aw-footer" style="background: #111; color: #fff; padding: 60px 0 20px; margin-top: 60px;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <div class="footer-brand">
+        <h3 style="color: #fff;">Working Class <span style="color: #1a73e8;">HVAC</span></h3>
+        <p>Licensed HVAC Contractor | License #1024283</p>
+        <p>📞 <a href="tel:6614948075" style="color: #fff; text-decoration: none;">(661) 494-8075</a></p>
+      </div>
+      <div class="footer-bottom"
+        style="grid-column: 1 / -1; border-top: 1px solid #333; margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.85rem; color: #888;">
+        <p>© 2026 Working Class Heating & Air. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>

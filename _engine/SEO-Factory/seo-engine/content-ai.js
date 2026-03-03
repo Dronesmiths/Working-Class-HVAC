@@ -1,10 +1,63 @@
 const maps = require('./map-utils');
+const weather = require('./weather-utils');
+
+/**
+ * Generates a premium CSS-based bar chart for data visualization.
+ */
+function generateDataChart(title, dataPoints) {
+    let rows = dataPoints.map(point => `
+        <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; color: #333;">
+                <span>${point.label}</span>
+                <span>${point.value}${point.suffix || ''}</span>
+            </div>
+            <div style="background: #eee; height: 12px; border-radius: 6px; overflow: hidden;">
+                <div style="background: linear-gradient(90deg, #1a73e8 0%, #34a853 100%); width: ${point.percent}%; height: 100%; border-radius: 6px;"></div>
+            </div>
+        </div>
+    `).join('');
+
+    return `
+<div class="data-chart-container" style="margin: 40px 0; padding: 30px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    <h3 style="margin-top: 0; margin-bottom: 25px; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-chart-bar" style="color: #1a73e8;"></i> ${title}
+    </h3>
+    ${rows}
+    <p style="font-size: 0.8rem; color: #888; margin-top: 15px; font-style: italic;">*Data based on industry averages and regional efficiency standards in Lancaster, CA.</p>
+</div>
+`;
+}
+
+/**
+ * Generates a premium "Pro-Tip" callout box.
+ */
+function generateCallout(type, title, text) {
+    const icons = {
+        tip: 'fa-lightbulb',
+        warning: 'fa-exclamation-triangle',
+        check: 'fa-check-circle'
+    };
+    const colors = {
+        tip: '#1a73e8',
+        warning: '#f1c40f',
+        check: '#2ecc71'
+    };
+
+    return `
+<div class="premium-callout" style="margin: 35px 0; padding: 25px; background: #fff; border-left: 5px solid ${colors[type]}; border-radius: 0 12px 12px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+    <h4 style="margin: 0 0 10px; color: ${colors[type]}; display: flex; align-items: center; gap: 12px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+        <i class="fas ${icons[type]}"></i> ${title}
+    </h4>
+    <p style="margin: 0; color: #444; font-size: 1rem; line-height: 1.6;">${text}</p>
+</div>
+`;
+}
 
 /**
  * Utility for enriching HVAC articles with local data, stats, and maps.
  */
 
-async function getEnrichedContent(title, pillar, location = "Lancaster, CA", mapsApiConfig = {}) {
+function getEnrichedContent(title, location, statsData, mapsApiConfig = {}) {
     console.log(`[AI-Enrich] Generating high-quality content for: ${title}`);
 
     const { apiKey, placeId, flags, businessAddress } = mapsApiConfig;
@@ -81,7 +134,16 @@ async function getEnrichedContent(title, pillar, location = "Lancaster, CA", map
 `;
     }
 
-    // 4. Advanced Health & Environment Testing Section
+    // 4. Premium Data Charts
+    const efficiencyChart = generateDataChart("HVAC Efficiency Comparison", [
+        { label: "Old Standard Units (10 SEER)", value: "10", suffix: " SEER", percent: 40 },
+        { label: "Modern Standard (14 SEER)", value: "14", suffix: " SEER", percent: 60 },
+        { label: "High-Efficiency (20+ SEER)", value: "20+", suffix: " SEER", percent: 100 }
+    ]);
+
+    const proTip = generateCallout("tip", "Expert Maintenance Secret", "In the dry Lancaster air, swamp cooler pads often fail due to hard water scale. Adding a small amount of water softener to your cooler's pan can extend pad life by up to 50%.");
+
+    // 5. Advanced Health & Environment Testing Section
     const envTestHtml = `
 <div class="env-verification-block" style="margin: 40px 0; padding: 25px; background: #fff; border: 2px solid #1a73e8; border-radius: 12px; box-shadow: 0 10px 25px rgba(26,115,232,0.1);">
     <h3 style="margin-top: 0; color: #1a73e8; display: flex; align-items: center; gap: 10px;">
@@ -111,7 +173,7 @@ async function getEnrichedContent(title, pillar, location = "Lancaster, CA", map
 </div>
 `;
 
-    // 5. Narrative Content
+    // 6. Narrative Content
     const bodyText = `
 <div class="article-body">
     <p>As we transition into the warmer months in ${location}, ensuring your air conditioning system is ready for the intense desert heat is critical. A proactive approach to Spring maintenance can prevent emergency breakdowns during peak July temperatures.</p>
@@ -120,9 +182,15 @@ async function getEnrichedContent(title, pillar, location = "Lancaster, CA", map
 
     ${envTestHtml}
 
+    <p>Lancaster's unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.</p>
+
+    ${efficiencyChart}
+
     <h2>Why Local Lancaster Homeowners Prioritize Spring Maintenance</h2>
     <p>In the Antelope Valley, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.</p>
     
+    ${proTip}
+
     ${mapEmbedHtml}
     
     ${tableHtml}
