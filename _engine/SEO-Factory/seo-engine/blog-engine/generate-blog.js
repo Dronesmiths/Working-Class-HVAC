@@ -51,11 +51,18 @@ function writePlaceholder(dir, url, title, pillar, isCornerstone) {
         footerGuidance = `\n<div class="guidance-box">\n  <p>Need more practical guidance on this? <a href="${guidanceUrl}">Read our Client Newsletter for ${title}</a>.</p>\n</div>`;
     }
 
-    template = template.replace('{{TITLE}}', title)
-        .replace('{{PILLAR}}', pillar)
-        .replace('{{CANONICAL_URL}}', `${CONFIG.domain}${url}`)
-        .replace('{{META_DESCRIPTION}}', `Read our latest guide on ${title} within the ${pillar} pillar.`)
-        .replace('{{BODY_CONTENT}}', `<!-- FACTORY:BODY_START -->\n<p>Drafting content for this blog post...</p>${footerGuidance}\n<!-- FACTORY:BODY_END -->`);
+    template = template.replace(/{{title}}/g, title)
+        .replace(/{{subtitle}}/g, `Expert insights on ${pillar}`)
+        .replace(/{{canonical_url}}/g, `${CONFIG.domain}${url}`)
+        .replace(/{{meta_description}}/g, `Read our latest guide on ${title} within the ${pillar} pillar.`)
+        .replace(/{{content_blocks}}/g, `<!-- FACTORY:BODY_START -->\n<p>Drafting content for this blog post...</p>${footerGuidance}\n<!-- FACTORY:BODY_END -->`)
+        .replace(/{{cta_label}}/g, 'Get a Free Quote')
+        .replace(/{{cta_url}}/g, '/contact/')
+        .replace(/{{container_class}}/g, 'container')
+        .replace(/{{button_class}}/g, 'btn btn-primary')
+        .replace(/{{hero_section_class}}/g, 'blog-hero')
+        .replace(/{{content_class}}/g, 'blog-content')
+        .replace(/{{wrapper_class}}/g, 'blog-footer-cta');
 
     writeAtomic(filePath, template);
 }
