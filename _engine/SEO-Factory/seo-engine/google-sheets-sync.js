@@ -7,7 +7,10 @@ const path = require('path');
  * Syncs pages from sitemaps to a specific tab in a Google Sheet.
  * If config.google_sheet_id is missing, it creates a new Sheet and returns the ID.
  */
-async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
+async function syncToGoogleSheets(config, siteRootOrData, tabName = "Inventory") {
+    const isRawData = Array.isArray(siteRootOrData);
+    const siteRoot = isRawData ? null : siteRootOrData;
+    const rawData = isRawData ? siteRootOrData : null;
     const BASE_DIR = __dirname;
     const COMPANY_PATH = path.join(BASE_DIR, 'COMPANY.json');
     let companyName = "SEO Engine";
@@ -78,19 +81,29 @@ async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
 
         const doc = new GoogleSpreadsheet(sheetId, auth);
         await doc.loadInfo();
+        console.log(`[Google Sheets] Connected to: "${doc.title}" (${sheetId})`);
 
         const sheetTitle = tabName;
         let sheet = doc.sheetsByTitle[sheetTitle];
+
+        let headers = ['Slug', 'URL', 'Type', 'Page Role', 'Pillar/Parent', 'LastUpdated'];
+        if (sheetTitle === 'Competitors') {
+            headers = ['Competitor Name', 'Website URL', 'Top Keywords', 'Estimated Traffic', 'Last Audit'];
+        } else if (rawData && rawData.length > 0) {
+            headers = Object.keys(rawData[0]);
+        }
+
         if (!sheet) {
             console.log(`Creating tab: ${sheetTitle}`);
-            let headers = ['Slug', 'URL', 'Type', 'LastUpdated'];
-            if (sheetTitle === 'Competitors') {
-                headers = ['Competitor Name', 'Website URL', 'Top Keywords', 'Estimated Traffic', 'Last Audit'];
-            }
             sheet = await doc.addSheet({
                 title: sheetTitle,
                 headerValues: headers
             });
+        } else {
+            console.log(`[${sheetTitle}] Enforcing headers: ${headers.join(', ')}`);
+            await sheet.setHeaderRow(headers);
+            await sheet.loadHeaderRow();
+            console.log(`[${sheetTitle}] Verified headers: ${sheet.headerValues.join(', ')}`);
         }
 
         // --- COLLECT PAGES FROM SITEMAPS ---
@@ -115,62 +128,94 @@ async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
             { path: 'sitemap-newsletter.xml', source: 'newsletter' }
         ];
 
-        for (const map of maps) {
-            const fullPath = path.join(siteRoot, map.path);
-            if (fs.existsSync(fullPath)) {
-                const content = fs.readFileSync(fullPath, 'utf8');
-                const urls = content.match(/<loc>(.*?)<\/loc>/g) || [];
-                urls.forEach(u => {
-                    const url = u.replace(/<\/?loc>/g, '');
+        if (!rawData) {
+            for (const map of maps) {
+                const fullPath = path.join(siteRoot, map.path);
+                if (fs.existsSync(fullPath)) {
+                    const content = fs.readFileSync(fullPath, 'utf8');
+                    const urls = content.match(/<loc>(.*?)<\/loc>/g) || [];
+                    urls.forEach(u => {
+                        const url = u.replace(/<\/?loc>/g, '');
 
-                    // Categorize based on URL pattern if source is 'all'
-                    let effectiveSource = map.source;
-                    if (effectiveSource === 'all') {
-                        if (url.includes('/blog/')) effectiveSource = 'blog';
-                        else if (url.includes('/locations/')) effectiveSource = 'location';
-                        else if (url.includes('/services/')) effectiveSource = 'city-service';
-                        else effectiveSource = 'core';
-                    }
+                        // Categorize based on URL pattern if source is 'all'
+                        let effectiveSource = map.source;
+                        if (effectiveSource === 'all') {
+                            if (url.includes('/blog/')) effectiveSource = 'blog';
+                            else if (url.includes('/locations/')) effectiveSource = 'location';
+                            else if (url.includes('/services/')) effectiveSource = 'city-service';
+                            else effectiveSource = 'core';
+                        }
 
-                    // If we have a target source, only collect matching ones
-                    if (targetSource && effectiveSource !== targetSource) return;
+                        // If we have a target source, only collect matching ones
+                        if (targetSource && effectiveSource !== targetSource) return;
 
-                    allPages.push({ url, source: effectiveSource });
-                });
+                        allPages.push({
+                            url,
+                            source: effectiveSource,
+                            pillar: 'Cornerstone',
+                            focus: 'General'
+                        });
+                    });
+                }
+            }
+        }
+
+        // --- ENRICH FROM REGISTRY ---
+        const registryPath = path.join(BASE_DIR, 'REGISTRY.json');
+        const legacyRegistryPath = path.join(BASE_DIR, '..', 'REGISTRY.json');
+        const finalRegistryPath = fs.existsSync(registryPath) ? registryPath : legacyRegistryPath;
+
+        const registryMap = {};
+        if (fs.existsSync(finalRegistryPath)) {
+            try {
+                const registryData = JSON.parse(fs.readFileSync(finalRegistryPath, 'utf8'));
+                if (registryData && registryData.pages) {
+                    registryData.pages.forEach(p => {
+                        registryMap[p.slug] = p;
+                    });
+                }
+            } catch (e) {
+                console.error('[Google Sheets] Error reading REGISTRY.json:', e.message);
             }
         }
 
         // --- SYNC TO SHEET ---
-        if (config.clear_before_sync) {
+        // Force clear to ensure new column structure is applied
+        const forceClear = true;
+        if (config.clear_before_sync || forceClear) {
             console.log(`[${tabName}] Clearing existing rows before re-sync...`);
             await sheet.clearRows();
         }
 
         const rows = await sheet.getRows();
-        const existingUrls = new Set(rows.map(r => r.get('URL')));
 
-        const newRows = allPages
-            .filter(p => !existingUrls.has(p.url))
-            .map(p => ({
-                Slug: p.url.split('/').filter(Boolean).pop() || '/',
-                URL: p.url,
-                Type: p.source,
-                LastUpdated: new Date().toISOString()
-            }));
-
-        // Special handling for Competitors (Initialize with samples if empty)
-        if (tabName === 'Competitors' && rows.length === 0 && newRows.length === 0) {
-            console.log(`[Competitors] Initializing intelligence hub with placeholders...`);
-            await sheet.addRows([
-                { 'Competitor Name': 'Sample HVAC Pro', 'Website URL': 'https://example-competitor.com', 'Top Keywords': 'ac repair lancaster, hvac install', 'Estimated Traffic': '1.2k/mo', 'Last Audit': new Date().toISOString() }
-            ]);
-        }
-
-        if (newRows.length > 0) {
-            console.log(`[${tabName}] Syncing ${newRows.length} new entries to Google Sheets...`);
-            await sheet.addRows(newRows);
+        if (rawData) {
+            console.log(`[${tabName}] Syncing ${rawData.length} raw data entries to Google Sheets...`);
+            await sheet.addRows(rawData);
         } else {
-            console.log(`[${tabName}] Tab is up to date.`);
+            const existingUrls = new Set(rows.map(r => r.get('URL')));
+            const newRows = allPages
+                .filter(p => !existingUrls.has(p.url))
+                .map(p => {
+                    const slug = p.url.split('/').filter(Boolean).pop() || '/';
+                    const regEntry = registryMap[slug] || {};
+
+                    return {
+                        Slug: slug,
+                        URL: p.url,
+                        Type: p.source,
+                        'Page Role': regEntry.type === 'cornerstone' ? 'Cornerstone Page' : 'Sub Page',
+                        'Pillar/Parent': regEntry.pillar || (p.source === 'location' ? 'Regional Coverage' : 'Root'),
+                        LastUpdated: new Date().toISOString()
+                    };
+                });
+
+            if (newRows.length > 0) {
+                console.log(`[${tabName}] Syncing ${newRows.length} new entries to Google Sheets...`);
+                await sheet.addRows(newRows);
+            } else {
+                console.log(`[${tabName}] Tab is up to date.`);
+            }
         }
 
         return sheetId;

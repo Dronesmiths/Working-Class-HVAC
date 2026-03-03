@@ -57,8 +57,8 @@ function generateCallout(type, title, text) {
  * Utility for enriching HVAC articles with local data, stats, and maps.
  */
 
-function getEnrichedContent(title, location, statsData, mapsApiConfig = {}) {
-    console.log(`[AI-Enrich] Generating high-quality content for: ${title}`);
+function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep = false) {
+    console.log(`[AI-Enrich] Generating high-quality content for: ${title} (Deep: ${isDeep})`);
 
     const { apiKey, placeId, flags, businessAddress } = mapsApiConfig;
 
@@ -173,7 +173,33 @@ function getEnrichedContent(title, location, statsData, mapsApiConfig = {}) {
 </div>
 `;
 
-    // 6. Narrative Content
+    // 6. Deep Technical Enrichment (if flagged)
+    let deepTechnicalHtml = '';
+    if (isDeep) {
+        deepTechnicalHtml = `
+<div class="deep-technical-section" style="margin: 40px 0; padding: 30px; background: #f4f7fa; border-left: 8px solid #003DA5; border-radius: 12px;">
+    <h2 style="margin-top: 0; color: #003DA5;">Technical Deep-Dive: System Physics & Longevity</h2>
+    <p>In the high-static pressure environments typical of High Desert homes, your HVAC blower motor works 40% harder than in coastal climates. This section breaks down the thermal dynamics that affect your utility bills.</p>
+    
+    <h3 style="color: #111;">Thermodynamic Load Factor</h3>
+    <p>Lancaster's diurnal temperature swing (the difference between day and night) can exceed 40 degrees. This rapid thermal expansion and contraction can cause micro-fractures in heat exchangers if not properly balanced during your Spring tune-up.</p>
+
+    ${generateDataChart("Thermal Load Distribution", [
+            { label: "Radiant Attic Heat", value: "35", suffix: "%", percent: 35 },
+            { label: "Window Heat Gain", value: "25", suffix: "%", percent: 25 },
+            { label: "System Latent Load", value: "20", suffix: "%", percent: 20 },
+            { label: "Infiltration/Leaks", value: "20", suffix: "%", percent: 20 }
+        ])}
+    
+    <div style="background: #fff; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #dce4ed;">
+        <h4 style="margin-top: 0; color: #DC143C;"><i class="fas fa-microscope"></i> Forensic Analysis: Filter Bypass</h4>
+        <p>The fine-grit alkali dust of the Antelope Valley is small enough to bypass standard fiberglass filters. We recommend HEPA-grade MERV 11+ filtration with custom-fit frame seals to prevent "slugging" your evaporator coils.</p>
+    </div>
+</div>
+        `;
+    }
+
+    // 7. Narrative Content
     const bodyText = `
 <div class="article-body">
     <p>As we transition into the warmer months in ${location}, ensuring your air conditioning system is ready for the intense desert heat is critical. A proactive approach to Spring maintenance can prevent emergency breakdowns during peak July temperatures.</p>
@@ -181,6 +207,8 @@ function getEnrichedContent(title, location, statsData, mapsApiConfig = {}) {
     ${statsHtml}
 
     ${envTestHtml}
+
+    ${deepTechnicalHtml}
 
     <p>Lancaster's unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.</p>
 

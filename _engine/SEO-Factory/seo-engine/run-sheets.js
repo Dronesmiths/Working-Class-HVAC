@@ -11,7 +11,8 @@ const BASE_DIR = __dirname;
 const ENGINES = [
     { name: 'Blog Engine', path: 'blog-engine/generate-blog.js' },
     { name: 'Newsletter Engine', path: 'newsletter-engine/generate-newsletter.js' },
-    { name: 'Local & Service Engine', path: 'local-engine/generate-local.js' }
+    { name: 'Local & Service Engine', path: 'local-engine/generate-local.js' },
+    { name: 'Content Health Engine', path: 'content-health-engine.js' }
 ];
 
 console.log('==========================================');

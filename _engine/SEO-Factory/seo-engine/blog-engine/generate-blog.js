@@ -37,12 +37,12 @@ function normalizeSlug(slug) {
     return slug.toLowerCase().trim().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
-async function writePlaceholder(dir, url, title, pillar, isCornerstone) {
+async function writePlaceholder(dir, url, title, pillar, isCornerstone, isDeep = false) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
     const filePath = path.join(dir, 'index.html');
-    if (fs.existsSync(filePath)) return;
+    if (fs.existsSync(filePath) && !isDeep) return;
 
     let template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 
@@ -59,10 +59,10 @@ async function writePlaceholder(dir, url, title, pillar, isCornerstone) {
         businessAddress: CONFIG.business_address || ""
     };
 
-    const bodyContent = await getEnrichedContent(title, pillar, "Lancaster, CA", mapsApiConfig);
+    const bodyContent = await getEnrichedContent(title, pillar, "Lancaster, CA", mapsApiConfig, isDeep);
 
     template = template.replace(/{{title}}/g, title)
-        .replace(/{{subtitle}}/g, `Expert insights on ${pillar}`)
+        .replace(/{{subtitle}}/g, isDeep ? `Master Guide: ${pillar} Essentials` : `Expert insights on ${pillar}`)
         .replace(/{{canonical_url}}/g, `${CONFIG.domain}${url}`)
         .replace(/{{meta_description}}/g, `Read our latest guide on ${title} within the ${pillar} pillar.`)
         .replace(/{{content_blocks}}/g, `${bodyContent}${footerGuidance}`)
@@ -70,8 +70,8 @@ async function writePlaceholder(dir, url, title, pillar, isCornerstone) {
         .replace(/{{cta_url}}/g, '/contact/')
         .replace(/{{container_class}}/g, 'container')
         .replace(/{{button_class}}/g, 'btn btn-primary')
-        .replace(/{{hero_section_class}}/g, 'blog-hero')
-        .replace(/{{content_class}}/g, 'blog-content')
+        .replace(/{{hero_section_class}}/g, isDeep ? 'premium-hero blog-hero' : 'blog-hero')
+        .replace(/{{content_class}}/g, isDeep ? 'premium-content blog-content' : 'blog-content')
         .replace(/{{wrapper_class}}/g, 'blog-footer-cta');
 
     writeAtomic(filePath, template);

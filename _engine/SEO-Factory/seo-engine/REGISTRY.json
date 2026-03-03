@@ -6,6 +6,41 @@
             "pillar": "Air Conditioning Services",
             "type": "cornerstone",
             "newsletter": true
+        },
+        {
+            "slug": "complete-ac-repair-guide-lancaster",
+            "title": "The Complete AC Repair & Troubleshooting Guide for Lancaster",
+            "pillar": "Air Conditioning Services",
+            "type": "cornerstone",
+            "newsletter": true
+        },
+        {
+            "slug": "high-desert-heating-efficiency-blueprint",
+            "title": "High Desert Heating Efficiency: The Homeowner's Winter Blueprint",
+            "pillar": "Heating Solutions",
+            "type": "cornerstone",
+            "newsletter": true
+        },
+        {
+            "slug": "av-indoor-air-quality-handbook",
+            "title": "Antelope Valley Indoor Air Quality & Purification Handbook",
+            "pillar": "Indoor Air Quality",
+            "type": "cornerstone",
+            "newsletter": true
+        },
+        {
+            "slug": "antelope-valley-hvac-maintenance-blueprints",
+            "title": "Antelope Valley HVAC Maintenance Blueprints for Local Families",
+            "pillar": "High Desert Maintenance Guide",
+            "type": "cornerstone",
+            "newsletter": true
+        },
+        {
+            "slug": "commercial-hvac-management-av-industrial",
+            "title": "Commercial HVAC Management & Industrial Solutions in the AV",
+            "pillar": "Commercial HVAC Solutions",
+            "type": "cornerstone",
+            "newsletter": true
         }
     ]
 }
