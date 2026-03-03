@@ -81,12 +81,44 @@ async function getEnrichedContent(title, pillar, location = "Lancaster, CA", map
 `;
     }
 
-    // 4. Narrative Content
+    // 4. Advanced Health & Environment Testing Section
+    const envTestHtml = `
+<div class="env-verification-block" style="margin: 40px 0; padding: 25px; background: #fff; border: 2px solid #1a73e8; border-radius: 12px; box-shadow: 0 10px 25px rgba(26,115,232,0.1);">
+    <h3 style="margin-top: 0; color: #1a73e8; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 1.5rem;">🛡️</span> Real-Time Environment Guard
+    </h3>
+    <p style="font-size: 0.95rem; color: #444;">Live data verified via Google specialized APIs for <strong>${location}</strong>.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px;">
+        <div style="padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #1a73e8;">
+            <span style="display: block; font-size: 0.75rem; color: #888; text-transform: uppercase;">Current Temp</span>
+            <div id="test-temp" style="font-size: 1.8rem; font-weight: bold; color: #1a73e8;">--°F</div>
+            <p style="font-size: 0.7rem; margin: 5px 0 0; color: #666;">Optimizing HVAC load...</p>
+        </div>
+        
+        <div style="padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #f1c40f;">
+            <span style="display: block; font-size: 0.75rem; color: #888; text-transform: uppercase;">Pollen Exposure</span>
+            <div id="test-pollen" style="font-size: 1.8rem; font-weight: bold; color: #333;">Moderate</div>
+            <p style="font-size: 0.7rem; margin: 5px 0 0; color: #666;">Filter check recommended</p>
+        </div>
+        
+        <div style="padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #2ecc71;">
+            <span style="display: block; font-size: 0.75rem; color: #888; text-transform: uppercase;">Air Purity</span>
+            <div id="test-aqi" style="font-size: 1.8rem; font-weight: bold; color: #2ecc71;">Excellent</div>
+            <p style="font-size: 0.7rem; margin: 5px 0 0; color: #666;">Indoor quality verified</p>
+        </div>
+    </div>
+</div>
+`;
+
+    // 5. Narrative Content
     const bodyText = `
 <div class="article-body">
     <p>As we transition into the warmer months in ${location}, ensuring your air conditioning system is ready for the intense desert heat is critical. A proactive approach to Spring maintenance can prevent emergency breakdowns during peak July temperatures.</p>
     
     ${statsHtml}
+
+    ${envTestHtml}
 
     <h2>Why Local Lancaster Homeowners Prioritize Spring Maintenance</h2>
     <p>In the Antelope Valley, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.</p>

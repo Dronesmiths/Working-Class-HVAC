@@ -46,6 +46,7 @@ function generateWeatherSnippet(city, state, apiKey = "") {
                 const response = await fetch(\`https://api.open-meteo.com/v1/forecast?latitude=\${lat}&longitude=\${lon}&current=temperature_2m,relative_humidity_2m,weather_code&temperature_unit=fahrenheit\`);
                 const data = await response.json();
                 document.getElementById('weather-temp').innerText = Math.round(data.current.temperature_2m) + '°F';
+                if (document.getElementById('test-temp')) document.getElementById('test-temp').innerText = Math.round(data.current.temperature_2m) + '°F';
                 document.getElementById('weather-humidity').innerText = data.current.relative_humidity_2m + '%';
                 const codes = { 0: 'Clear sky', 1: 'Mainly clear', 2: 'Partly cloudy', 3: 'Overcast' };
                 document.getElementById('weather-desc').innerText = codes[data.current.weather_code] || 'Clear';
@@ -63,6 +64,7 @@ function generateWeatherSnippet(city, state, apiKey = "") {
                 if (aqiData.indexes) {
                     const idx = aqiData.indexes[0];
                     document.getElementById('weather-aqi').innerText = idx.category;
+                    if (document.getElementById('test-aqi')) document.getElementById('test-aqi').innerText = idx.category;
                     document.getElementById('aqi-val').innerText = 'Index: ' + idx.aqi;
                     document.getElementById('weather-aqi').style.color = idx.color && idx.color.red ? 'rgb('+(idx.color.red*255)+','+(idx.color.green*255)+','+(idx.color.blue*255)+')' : '#2ecc71';
                 }
@@ -73,6 +75,7 @@ function generateWeatherSnippet(city, state, apiKey = "") {
                 if (pollenData.dailyInfo && pollenData.dailyInfo[0].pollenTypeInfo) {
                     const info = pollenData.dailyInfo[0].pollenTypeInfo[0];
                     document.getElementById('pollen-status').innerText = info.indexInfo.category;
+                    if (document.getElementById('test-pollen')) document.getElementById('test-pollen').innerText = info.indexInfo.category;
                 }
             } catch (e) {
                 console.warn('Air/Pollen API limited or error', e);
