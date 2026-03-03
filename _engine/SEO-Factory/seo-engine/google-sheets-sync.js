@@ -83,9 +83,13 @@ async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
         let sheet = doc.sheetsByTitle[sheetTitle];
         if (!sheet) {
             console.log(`Creating tab: ${sheetTitle}`);
+            let headers = ['Slug', 'URL', 'Type', 'LastUpdated'];
+            if (sheetTitle === 'Competitors') {
+                headers = ['Competitor Name', 'Website URL', 'Top Keywords', 'Estimated Traffic', 'Last Audit'];
+            }
             sheet = await doc.addSheet({
                 title: sheetTitle,
-                headerValues: ['Slug', 'URL', 'Type', 'LastUpdated']
+                headerValues: headers
             });
         }
 
@@ -96,6 +100,7 @@ async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
             'Services': 'city-service',
             'Blogs': 'blog',
             'Newsletters': 'newsletter',
+            'Competitors': 'competitor',
             'Core': 'core'
         };
 
@@ -152,6 +157,14 @@ async function syncToGoogleSheets(config, siteRoot, tabName = "Inventory") {
                 Type: p.source,
                 LastUpdated: new Date().toISOString()
             }));
+
+        // Special handling for Competitors (Initialize with samples if empty)
+        if (tabName === 'Competitors' && rows.length === 0 && newRows.length === 0) {
+            console.log(`[Competitors] Initializing intelligence hub with placeholders...`);
+            await sheet.addRows([
+                { 'Competitor Name': 'Sample HVAC Pro', 'Website URL': 'https://example-competitor.com', 'Top Keywords': 'ac repair lancaster, hvac install', 'Estimated Traffic': '1.2k/mo', 'Last Audit': new Date().toISOString() }
+            ]);
+        }
 
         if (newRows.length > 0) {
             console.log(`[${tabName}] Syncing ${newRows.length} new entries to Google Sheets...`);
