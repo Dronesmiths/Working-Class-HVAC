@@ -12,10 +12,10 @@ const ENGINES = [
     { name: 'Blog Engine', path: 'blog-engine/generate-blog.js' },
     { name: 'Newsletter Engine', path: 'newsletter-engine/generate-newsletter.js' },
     { name: 'Local & Service Engine', path: 'local-engine/generate-local.js' },
-    { name: 'Content Health Engine', path: 'content-health-engine.js' },
-    { name: 'Authority Matrix Heatmap', path: '../../scripts/authority-matrix.js' },
-    { name: 'Asset & Image Health', path: '../../scripts/asset-audit.js' },
-    { name: 'Market Gap Intelligence', path: '../../scripts/competitor-intelligence.js' }
+    { name: 'Content Health Engine', path: '../../../scripts/content-health-engine.js' },
+    { name: 'Authority Matrix Heatmap', path: '../../../scripts/authority-matrix.js' },
+    { name: 'Asset & Image Health', path: '../../../scripts/asset-audit.js' },
+    { name: 'Market Gap Intelligence', path: '../../../scripts/competitor-intelligence.js' }
 ];
 
 console.log('==========================================');

@@ -1,15 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const { syncToGoogleSheets } = require('./google-sheets-sync');
-
-/**
- * Content Health Engine
- * Scans generated HTML files, checks word count, and reports to Google Sheets.
- */
-
 const BASE_DIR = __dirname;
-const SITE_ROOT = path.join(BASE_DIR, '..', '..', '..');
-const CONFIG = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'local-engine', 'local-config.json'), 'utf8'));
+const SITE_ROOT = path.join(BASE_DIR, '..');
+const SEO_ENGINE_DIR = path.join(SITE_ROOT, '_engine', 'SEO-Factory', 'seo-engine');
+const CONFIG = JSON.parse(fs.readFileSync(path.join(SEO_ENGINE_DIR, 'local-engine', 'local-config.json'), 'utf8'));
+const { syncToGoogleSheets } = require(path.join(SEO_ENGINE_DIR, 'google-sheets-sync'));
 
 async function auditContent() {
     console.log('--- Starting Content Health Audit ---');
