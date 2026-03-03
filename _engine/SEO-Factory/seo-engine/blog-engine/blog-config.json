@@ -8,7 +8,7 @@
     "lock_ttl_minutes": 30,
     "google_sheet_id": "1Ipagk7rJmuqCooYkGcQfbs81fqHmuyvyj_MDkTRoSZk",
     "google_sheet_tab_name": "Inventory",
-    "google_maps_api_key": "",
+    "google_maps_api_key": "AIzaSyBfQkNbS2ES_kRbtRvKE3S42i4rG8sJFrs",
     "google_place_id": "",
     "maps_feature_flags": {
         "show_live_map": true,
