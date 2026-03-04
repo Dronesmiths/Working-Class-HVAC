@@ -4,7 +4,7 @@ const weather = require('./weather-utils');
 /**
  * Generates a premium CSS-based bar chart for data visualization.
  */
-function generateDataChart(title, dataPoints) {
+function generateDataChart(title, dataPoints, location = 'Lancaster, CA') {
     let rows = dataPoints.map(point => `
         <div style="margin-bottom: 20px;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; color: #333;">
@@ -23,7 +23,7 @@ function generateDataChart(title, dataPoints) {
         <i class="fas fa-chart-bar" style="color: #1a73e8;"></i> ${title}
     </h3>
     ${rows}
-    <p style="font-size: 0.8rem; color: #888; margin-top: 15px; font-style: italic;">*Data based on industry averages and regional efficiency standards in Lancaster, CA.</p>
+    <p style="font-size: 0.8rem; color: #888; margin-top: 15px; font-style: italic;">*Data based on industry averages and regional efficiency standards in ${location}.</p>
 </div>
 `;
 }
@@ -69,7 +69,7 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
 <div class="stat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
     <div class="stat-card" style="padding: 24px; border: 1px solid #eee; border-radius: 12px; text-align: center; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <h3 style="font-size: 2rem; color: #1a73e8; margin-bottom: 8px;">100°F+</h3>
-        <p style="margin: 0; color: #555;">Average Lancaster Summer Peaks</p>
+        <p style="margin: 0; color: #555;">Average ${location} Summer Peaks</p>
     </div>
     <div class="stat-card" style="padding: 24px; border: 1px solid #eee; border-radius: 12px; text-align: center; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
         <h3 style="font-size: 2rem; color: #1a73e8; margin-bottom: 8px;">20-30%</h3>
@@ -85,7 +85,7 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
     // 2. Data Table for Comparison
     const tableHtml = `
 <div class="data-table-container" style="margin: 30px 0;">
-    <h3 style="margin-bottom: 15px;">Lancaster HVAC Maintenance Checklist</h3>
+    <h3 style="margin-bottom: 15px;">${location} HVAC Maintenance Checklist</h3>
     <table style="width: 100%; border-collapse: collapse; font-family: sans-serif;">
         <thead>
             <tr style="background-color: #f4f4f4; border-bottom: 2px solid #eee;">
@@ -139,9 +139,9 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
         { label: "Old Standard Units (10 SEER)", value: "10", suffix: " SEER", percent: 40 },
         { label: "Modern Standard (14 SEER)", value: "14", suffix: " SEER", percent: 60 },
         { label: "High-Efficiency (20+ SEER)", value: "20+", suffix: " SEER", percent: 100 }
-    ]);
+    ], location);
 
-    const proTip = generateCallout("tip", "Expert Maintenance Secret", "In the dry Lancaster air, swamp cooler pads often fail due to hard water scale. Adding a small amount of water softener to your cooler's pan can extend pad life by up to 50%.");
+    const proTip = generateCallout("tip", "Expert Maintenance Secret", `In the dry ${location} air, swamp cooler pads often fail due to hard water scale. Adding a small amount of water softener to your cooler's pan can extend pad life by up to 50%.`);
 
     // 5. Advanced Health & Environment Testing Section
     const envTestHtml = `
@@ -182,18 +182,18 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
     <p>In the high-static pressure environments typical of High Desert homes, your HVAC blower motor works 40% harder than in coastal climates. This section breaks down the thermal dynamics that affect your utility bills.</p>
     
     <h3 style="color: #111;">Thermodynamic Load Factor</h3>
-    <p>Lancaster's diurnal temperature swing (the difference between day and night) can exceed 40 degrees. This rapid thermal expansion and contraction can cause micro-fractures in heat exchangers if not properly balanced during your Spring tune-up.</p>
+    <p>${location}'s diurnal temperature swing (the difference between day and night) can exceed 40 degrees. This rapid thermal expansion and contraction can cause micro-fractures in heat exchangers if not properly balanced during your Spring tune-up.</p>
 
     ${generateDataChart("Thermal Load Distribution", [
             { label: "Radiant Attic Heat", value: "35", suffix: "%", percent: 35 },
             { label: "Window Heat Gain", value: "25", suffix: "%", percent: 25 },
             { label: "System Latent Load", value: "20", suffix: "%", percent: 20 },
             { label: "Infiltration/Leaks", value: "20", suffix: "%", percent: 20 }
-        ])}
+        ], location)}
     
     <div style="background: #fff; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #dce4ed;">
         <h4 style="margin-top: 0; color: #DC143C;"><i class="fas fa-microscope"></i> Forensic Analysis: Filter Bypass</h4>
-        <p>The fine-grit alkali dust of the Antelope Valley is small enough to bypass standard fiberglass filters. We recommend HEPA-grade MERV 11+ filtration with custom-fit frame seals to prevent "slugging" your evaporator coils.</p>
+        <p>The fine-grit alkali dust of the Antelope Valley is small enough to bypass standard fiberglass filters. We recommend HEPA-grade MERV 11+ filtration with custom-fit frame seals to prevent "slugging" your evaporator coils in ${location}.</p>
     </div>
 </div>
         `;
@@ -210,12 +210,12 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
 
     ${deepTechnicalHtml}
 
-    <p>Lancaster's unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.</p>
+    <p>${location}'s unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.</p>
 
     ${efficiencyChart}
 
-    <h2>Why Local Lancaster Homeowners Prioritize Spring Maintenance</h2>
-    <p>In the Antelope Valley, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.</p>
+    <h2>Why Local ${location} Homeowners Prioritize Spring Maintenance</h2>
+    <p>In the Antelope Valley area, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.</p>
     
     ${proTip}
 

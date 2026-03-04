@@ -3,6 +3,7 @@
         {
             "slug": "spring-hvac-prep-lancaster-ca",
             "title": "Spring HVAC Prep Guide for Lancaster Homeowners",
+            "location": "Lancaster, CA",
             "pillar": "Air Conditioning Services",
             "type": "cornerstone",
             "newsletter": true
@@ -10,6 +11,7 @@
         {
             "slug": "complete-ac-repair-guide-lancaster",
             "title": "The Complete AC Repair & Troubleshooting Guide for Lancaster",
+            "location": "Lancaster, CA",
             "pillar": "Air Conditioning Services",
             "type": "cornerstone",
             "newsletter": true
@@ -17,6 +19,7 @@
         {
             "slug": "high-desert-heating-efficiency-blueprint",
             "title": "High Desert Heating Efficiency: The Homeowner's Winter Blueprint",
+            "location": "Antelope Valley, CA",
             "pillar": "Heating Solutions",
             "type": "cornerstone",
             "newsletter": true
@@ -24,6 +27,7 @@
         {
             "slug": "av-indoor-air-quality-handbook",
             "title": "Antelope Valley Indoor Air Quality & Purification Handbook",
+            "location": "Antelope Valley, CA",
             "pillar": "Indoor Air Quality",
             "type": "cornerstone",
             "newsletter": true
@@ -31,6 +35,7 @@
         {
             "slug": "antelope-valley-hvac-maintenance-blueprints",
             "title": "Antelope Valley HVAC Maintenance Blueprints for Local Families",
+            "location": "Antelope Valley, CA",
             "pillar": "High Desert Maintenance Guide",
             "type": "cornerstone",
             "newsletter": true
@@ -38,6 +43,7 @@
         {
             "slug": "commercial-hvac-management-av-industrial",
             "title": "Commercial HVAC Management & Industrial Solutions in the AV",
+            "location": "Antelope Valley, CA",
             "pillar": "Commercial HVAC Solutions",
             "type": "cornerstone",
             "newsletter": true
@@ -45,42 +51,49 @@
         {
             "slug": "palmdale-hvac-efficiency-guide",
             "title": "Maximizing HVAC Efficiency in Palmdale: A Local Homeowner's Guide",
+            "location": "Palmdale, CA",
             "pillar": "High Desert Maintenance Guide",
             "type": "support"
         },
         {
             "slug": "furnace-troubleshooting-tehachapi",
             "title": "Fast Furnace Troubleshooting for Tehachapi's Coldest Nights",
+            "location": "Tehachapi, CA",
             "pillar": "Heating Solutions",
             "type": "support"
         },
         {
             "slug": "smart-home-hvac-quartz-hill",
             "title": "Integrating Smart HVAC Technology into Quartz Hill Custom Homes",
+            "location": "Quartz Hill, CA",
             "pillar": "Air Conditioning Services",
             "type": "support"
         },
         {
             "slug": "mobile-home-ac-repair-rosamond",
             "title": "Expert Mobile Home AC Repair & Efficiency in Rosamond",
+            "location": "Rosamond, CA",
             "pillar": "Air Conditioning Services",
             "type": "support"
         },
         {
             "slug": "swamp-cooler-vs-ac-mojave",
             "title": "Swamp Cooler vs. Traditional AC: What's Best for the Mojave Climate?",
+            "location": "Mojave, CA",
             "pillar": "Air Conditioning Services",
             "type": "support"
         },
         {
             "slug": "indoor-allergen-reduction-acton",
             "title": "Reduction of Indoor Allergens in Acton: IAQ Strategies for Rural Families",
+            "location": "Acton, CA",
             "pillar": "Indoor Air Quality",
             "type": "support"
         },
         {
             "slug": "industrial-cooling-cal-city",
             "title": "Heavy-Duty Industrial Cooling Solutions for California City Businesses",
+            "location": "California City, CA",
             "pillar": "Commercial HVAC Solutions",
             "type": "support"
         }

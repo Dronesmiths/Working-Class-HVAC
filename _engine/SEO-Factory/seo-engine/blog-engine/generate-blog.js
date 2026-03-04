@@ -37,7 +37,7 @@ function normalizeSlug(slug) {
     return slug.toLowerCase().trim().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
 }
 
-async function writePlaceholder(dir, url, title, pillar, isCornerstone, isDeep = false) {
+async function writePlaceholder(dir, url, title, pillar, isCornerstone, location = "Lancaster, CA", isDeep = false) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
@@ -59,7 +59,7 @@ async function writePlaceholder(dir, url, title, pillar, isCornerstone, isDeep =
         businessAddress: CONFIG.business_address || ""
     };
 
-    const bodyContent = await getEnrichedContent(title, pillar, "Lancaster, CA", mapsApiConfig, isDeep);
+    const bodyContent = await getEnrichedContent(title, pillar, location, mapsApiConfig, isDeep);
 
     template = template.replace(/{{title}}/g, title)
         .replace(/{{subtitle}}/g, isDeep ? `Master Guide: ${pillar} Essentials` : `Expert insights on ${pillar}`)
@@ -122,7 +122,7 @@ async function build() {
         const pillars = JSON.parse(fs.readFileSync(PILLARS_PATH, 'utf8'));
 
         let newPostsCount = 0;
-        const maxNew = CONFIG.max_new_posts_per_run || 5;
+        const maxNew = CONFIG.max_new_posts_per_run || 200;
 
         // Simplified logic for template: Ensure all registry entries exist
         for (const page of registry.pages) {
@@ -130,11 +130,14 @@ async function build() {
             const url = `${CONFIG.base_path}/${nSlug}/`;
             const dir = path.join(SITE_ROOT, 'blog', nSlug);
 
-            if (!fs.existsSync(path.join(dir, 'index.html'))) {
+            // Force regeneration if it's one of our new ones or if isDeep requested
+            const force = page.slug.includes('-palmdale') || page.slug.includes('-tehachapi') || page.slug.includes('-quartz-hill') || page.slug.includes('-rosamond') || page.slug.includes('-mojave') || page.slug.includes('-acton') || page.slug.includes('-cal-city');
+
+            if (!fs.existsSync(path.join(dir, 'index.html')) || force) {
                 if (newPostsCount < maxNew) {
                     console.log(`${DRY_RUN ? '[DRY RUN] Would build' : 'Building'}: ${url}`);
                     const isCornerstone = page.type === 'cornerstone';
-                    await writePlaceholder(dir, url, page.title, page.pillar, isCornerstone);
+                    await writePlaceholder(dir, url, page.title, page.pillar, isCornerstone, page.location || "Lancaster, CA");
                     newPostsCount++;
                 }
             }
