@@ -199,10 +199,33 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
         `;
     }
 
-    // 7. Narrative Content
+    // 7. Context-Aware Narrative Content
+    let leadParagraph = '';
+    let middleParagraph = '';
+    let priorityTitle = '';
+    let priorityText = '';
+
+    if (pillar === 'Heating Solutions') {
+        leadParagraph = `As we prepare for the freezing alpine nights in ${location}, ensuring your furnace or heat pump is operating at peak efficiency is non-negotiable. A proactive approach to late-season maintenance can prevent catastrophic system failures when the temperature drops below freezing.`;
+        middleParagraph = `${location}'s unique high-altitude climate, characterized by sharp temperature drops and winter winds, calls for specialized heating care. Without regular calibration, heating systems in mountain areas can lose significant efficiency and safety margins over time.`;
+        priorityTitle = `Why Local ${location} Homeowners Prioritize Heating Readiness`;
+        priorityText = `In the upper desert and mountain corridors, a failed furnace isn't just an inconvenience—it's a safety hazard. Our technicians emphasize that a 21-point winterization check in October or November is the best way to ensure reliable warmth all season long.`;
+    } else if (pillar === 'Air Conditioning Services') {
+        leadParagraph = `As we transition into the warmer months in ${location}, ensuring your air conditioning system is ready for the intense desert heat is critical. A proactive approach to Spring maintenance can prevent emergency breakdowns during peak July temperatures.`;
+        middleParagraph = `${location}'s unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.`;
+        priorityTitle = `Why Local ${location} Homeowners Prioritize Spring Maintenance`;
+        priorityText = `In the Antelope Valley area, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.`;
+    } else {
+        // Default / Maintenance / General
+        leadParagraph = `Maintaining optimal system performance in ${location} requires more than just occasional filter changes. To ensure your home remains a sanctuary from the high-desert elements, a comprehensive local maintenance strategy is essential.`;
+        middleParagraph = `The ${location} environment presents unique challenges for standard HVAC equipment, from fine-grit dust to extreme diurnal temperature swings. A professional assessment is the only way to guarantee year-round comfort.`;
+        priorityTitle = `Why ${location} Property Owners Choose Proactive Care`;
+        priorityText = `Local property owners know that the cost of prevention is always lower than the cost of emergency repair. By scheduling bi-annual inspections, you're investing in the longevity and safety of your most critical home infrastructure.`;
+    }
+
     const bodyText = `
 <div class="article-body">
-    <p>As we transition into the warmer months in ${location}, ensuring your air conditioning system is ready for the intense desert heat is critical. A proactive approach to Spring maintenance can prevent emergency breakdowns during peak July temperatures.</p>
+    <p>${leadParagraph}</p>
     
     ${statsHtml}
 
@@ -210,12 +233,12 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
 
     ${deepTechnicalHtml}
 
-    <p>${location}'s unique climate, characterized by dry heat and high winds, places significant stress on residential HVAC systems. Without regular maintenance, efficiency can drop as much as 5% every single year.</p>
+    <p>${middleParagraph}</p>
 
     ${efficiencyChart}
 
-    <h2>Why Local ${location} Homeowners Prioritize Spring Maintenance</h2>
-    <p>In the Antelope Valley area, dust and high winds often lead to premature coil clogging and reduced airflow. Our local technicians emphasize that a simple 21-point inspection in April or May can save up to 30% on cooling costs throughout the summer season.</p>
+    <h2>${priorityTitle}</h2>
+    <p>${priorityText}</p>
     
     ${proTip}
 
@@ -223,7 +246,7 @@ function getEnrichedContent(title, pillar, location, mapsApiConfig = {}, isDeep 
     
     ${tableHtml}
 
-    <p>Don't wait for your system to fail on a triple-digit afternoon. Contact Working Class HVAC today for a comprehensive local assessment.</p>
+    <p>Don't wait for your system to fail when you need it most. Contact Working Class HVAC today for a comprehensive local assessment in ${location}.</p>
 </div>
 `;
 
