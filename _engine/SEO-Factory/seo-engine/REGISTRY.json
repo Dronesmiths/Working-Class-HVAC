@@ -41,6 +41,48 @@
             "pillar": "Commercial HVAC Solutions",
             "type": "cornerstone",
             "newsletter": true
+        },
+        {
+            "slug": "palmdale-hvac-efficiency-guide",
+            "title": "Maximizing HVAC Efficiency in Palmdale: A Local Homeowner's Guide",
+            "pillar": "High Desert Maintenance Guide",
+            "type": "support"
+        },
+        {
+            "slug": "furnace-troubleshooting-tehachapi",
+            "title": "Fast Furnace Troubleshooting for Tehachapi's Coldest Nights",
+            "pillar": "Heating Solutions",
+            "type": "support"
+        },
+        {
+            "slug": "smart-home-hvac-quartz-hill",
+            "title": "Integrating Smart HVAC Technology into Quartz Hill Custom Homes",
+            "pillar": "Air Conditioning Services",
+            "type": "support"
+        },
+        {
+            "slug": "mobile-home-ac-repair-rosamond",
+            "title": "Expert Mobile Home AC Repair & Efficiency in Rosamond",
+            "pillar": "Air Conditioning Services",
+            "type": "support"
+        },
+        {
+            "slug": "swamp-cooler-vs-ac-mojave",
+            "title": "Swamp Cooler vs. Traditional AC: What's Best for the Mojave Climate?",
+            "pillar": "Air Conditioning Services",
+            "type": "support"
+        },
+        {
+            "slug": "indoor-allergen-reduction-acton",
+            "title": "Reduction of Indoor Allergens in Acton: IAQ Strategies for Rural Families",
+            "pillar": "Indoor Air Quality",
+            "type": "support"
+        },
+        {
+            "slug": "industrial-cooling-cal-city",
+            "title": "Heavy-Duty Industrial Cooling Solutions for California City Businesses",
+            "pillar": "Commercial HVAC Solutions",
+            "type": "support"
         }
     ]
 }
