@@ -131,7 +131,7 @@ async function build() {
             const dir = path.join(SITE_ROOT, 'blog', nSlug);
 
             // Force regeneration if it's one of our new ones or if isDeep requested
-            const force = page.slug.includes('-palmdale') || page.slug.includes('-tehachapi') || page.slug.includes('-quartz-hill') || page.slug.includes('-rosamond') || page.slug.includes('-mojave') || page.slug.includes('-acton') || page.slug.includes('-cal-city');
+            const force = page.slug.includes('palmdale') || page.slug.includes('tehachapi') || page.slug.includes('quartz-hill') || page.slug.includes('rosamond') || page.slug.includes('mojave') || page.slug.includes('acton') || page.slug.includes('cal-city');
 
             if (!fs.existsSync(path.join(dir, 'index.html')) || force) {
                 if (newPostsCount < maxNew) {
