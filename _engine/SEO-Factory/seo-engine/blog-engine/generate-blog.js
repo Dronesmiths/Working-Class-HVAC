@@ -42,7 +42,6 @@ async function writePlaceholder(dir, url, title, pillar, isCornerstone, location
         fs.mkdirSync(dir, { recursive: true });
     }
     const filePath = path.join(dir, 'index.html');
-    if (fs.existsSync(filePath) && !isDeep) return;
 
     let template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 
