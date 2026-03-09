@@ -3,4 +3,7 @@ node_modules/
 .idea
 Archive.zip
 .wrangler/
+service-account.json
+.env
+*.json.service-account
 

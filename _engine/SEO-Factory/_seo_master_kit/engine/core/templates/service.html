@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | AI Pilots SEO Feature</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <link rel="canonical" href="https://aipilots.site/features/{{SLUG}}/">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css?v=2.1">
+
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            padding: 120px 20px 80px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .service-hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 20px;
+            color: #166534;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .content-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            color: #065f46;
+            margin-top: 40px;
+        }
+
+        .cta-box {
+            background: #22c55e;
+            color: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #16a34a;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo"><img src="/images/AI Pilots-logo.png" alt="AI Pilots"></a>
+            <div class="header-actions">
+                <a href="/contact/" class="btn btn-primary">Signup</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="service-hero">
+        <h1>{{TITLE}}</h1>
+        <p>{{SUBTITLE}}</p>
+    </section>
+
+    <article class="content-section">
+        {{CONTENT}}
+
+        <div class="cta-box">
+            <h3>Simplify Your Business Today</h3>
+            <p>Join the next generation of business leaders using AI Pilots to automate their growth.</p>
+            <a href="/contact/" class="btn-white">Start Your Free Trial</a>
+        </div>
+    </article>
+
+    <footer class="aw-footer">
+        <div class="container">
+            <p>© <span id="year"></span> AI Pilots. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

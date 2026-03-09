@@ -1,10 +1,33 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 const BASE_DIR = __dirname;
 const SITE_ROOT = path.join(BASE_DIR, '..');
 const SEO_ENGINE_DIR = path.join(SITE_ROOT, '_engine', 'SEO-Factory', 'seo-engine');
 const CONFIG = JSON.parse(fs.readFileSync(path.join(SEO_ENGINE_DIR, 'local-engine', 'local-config.json'), 'utf8'));
 const { syncToGoogleSheets } = require(path.join(SEO_ENGINE_DIR, 'google-sheets-sync'));
+
+async function checkLiveStatus(url) {
+    return new Promise((resolve) => {
+        const timeout = setTimeout(() => {
+            resolve('Timeout');
+        }, 5000);
+
+        https.get(url, (res) => {
+            clearTimeout(timeout);
+            if (res.statusCode === 200) {
+                resolve('200 OK');
+            } else if (res.statusCode === 404) {
+                resolve('404 Not Found');
+            } else {
+                resolve(`${res.statusCode} Error`);
+            }
+        }).on('error', (err) => {
+            clearTimeout(timeout);
+            resolve(`Error: ${err.message}`);
+        });
+    });
+}
 
 async function auditContent() {
     console.log('--- Starting Content Health Audit ---');
@@ -27,12 +50,17 @@ async function auditContent() {
             const wordCount = countWords(content);
             const relativePath = path.relative(SITE_ROOT, file);
             const slug = path.dirname(relativePath).split(path.sep).pop() || 'root';
+            const liveUrl = `https://workingclasshvac.com/${relativePath.replace('index.html', '')}`;
+
+            console.log(`[Health Engine] Checking live status: ${liveUrl}`);
+            const liveStatus = await checkLiveStatus(liveUrl);
 
             healthReport.push({
                 Slug: slug,
-                URL: `https://workingclasshvac.com/${relativePath.replace('index.html', '')}`,
+                URL: liveUrl,
                 'Word Count': wordCount,
-                Status: wordCount < 200 ? 'Thin' : (wordCount < 500 ? 'Needs Expansion' : 'Healthy'),
+                'Local Health': wordCount < 200 ? 'Thin' : (wordCount < 500 ? 'Needs Expansion' : 'Healthy'),
+                'Live Status': liveStatus,
                 Pillar: scan.pillar,
                 LastChecked: new Date().toISOString()
             });

@@ -1,13 +1,23 @@
 [
     {
-        "city": "Los Angeles",
+        "city": "Lancaster",
         "state": "CA",
-        "slug": "los-angeles-ca"
+        "slug": "lancaster-ca"
     },
     {
         "city": "Palmdale",
         "state": "CA",
         "slug": "palmdale-ca"
+    },
+    {
+        "city": "Tehachapi",
+        "state": "CA",
+        "slug": "tehachapi-ca"
+    },
+    {
+        "city": "Rosamond",
+        "state": "CA",
+        "slug": "rosamond-ca"
     },
     {
         "city": "Quartz Hill",

@@ -7,7 +7,8 @@
     "run:local": "node local-engine/generate-local.js",
     "run:blog": "node blog-engine/generate-blog.js",
     "run:newsletter": "node newsletter-engine/generate-newsletter.js",
-    "validate": "node local-engine/validate.js"
+    "validate": "node local-engine/validate.js",
+    "sync:gsc": "node sync-gsc.js"
   },
   "dependencies": {
     "google-auth-library": "^10.6.1",

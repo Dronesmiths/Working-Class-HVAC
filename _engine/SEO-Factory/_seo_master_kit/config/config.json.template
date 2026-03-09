@@ -1,0 +1,23 @@
+{
+    "PROJECT_NAME": "[NEW PROJECT NAME]",
+    "DOMAIN": "https://[BRAND-DOMAIN].com",
+    "GSC_SITE_URL": "sc-domain:[BRAND-DOMAIN].com",
+    "SPREADSHEET_ID": "[PASTE YOUR GOOGLE SHEET ID HERE]",
+    "WEBSITE_DIR": "../../",
+    "SITEMAP_FILENAME": "sitemap.xml",
+    "SERVICE_ACCOUNT_FILE": "service-account.json",
+    "SITEMAP_MAPPING": {
+        "📂 SERVICE PAGES": [
+            "/services/"
+        ],
+        "✍️ BLOG ARTICLES": [
+            "/blog/"
+        ],
+        "📍 LOCATIONS": [
+            "/locations/"
+        ],
+        "🏗️ INDUSTRIES": [
+            "/industries/"
+        ]
+    }
+}

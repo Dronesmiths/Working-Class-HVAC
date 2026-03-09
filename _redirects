@@ -30,6 +30,10 @@
 /services-v1/mosquitos /services/ 301
 /services-v1/mosquitos/ /services/ 301
 
+# Consolidated Service Paths
+/services/wall-furnaces-floor-heaters/* /services/wall-furnaces/:splat 301
+/services/central-split-systems/* /services/central-splits/:splat 301
+
 # Cleanup old lead-gen pages
 /f1-financing-1 /contact/ 301
 /f1-financing-1/ /contact/ 301

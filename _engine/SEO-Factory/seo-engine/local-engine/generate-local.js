@@ -6,11 +6,13 @@ const { syncToGoogleSheets } = require('../google-sheets-sync');
 const { syncWithMasterIndex } = require('../sitemap-utils');
 const maps = require('../map-utils');
 const weather = require('../weather-utils');
+const pollen = require('../pollen-utils');
 
 const BASE_DIR = __dirname;
 const CONFIG = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'local-config.json'), 'utf8'));
 const LOCATIONS = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'locations.json'), 'utf8'));
 const SERVICES = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'services.json'), 'utf8'));
+const GEO_DATA = JSON.parse(fs.readFileSync(path.join(BASE_DIR, 'geo-data.json'), 'utf8'));
 const BUILD_MAP_PATH = path.join(BASE_DIR, 'build-map.json');
 const BUILD_LOG_PATH = path.join(BASE_DIR, 'logs', 'local-build-log.json');
 const SITEMAP_PATH = path.join(BASE_DIR, 'sitemap-local.xml');
@@ -180,14 +182,32 @@ function strengthenWithGSC() {
     return newOpportunities;
 }
 
-function writePlaceholder(dir, url, title, h1, locationString) {
+async function generateProLocationPage(dir, url, title, h1, locationString, cityData, weatherData, pollenData) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
     const filePath = path.join(dir, 'index.html');
-    if (fs.existsSync(filePath)) return; // Safety: never overwrite
+
+    // For this Pro Upgrade, we want to allow overwriting to apply the new styling
+    // to existing pages. We'll log it instead of skipping.
+    if (fs.existsSync(filePath)) {
+        console.log(`Updating existing page with pro styling: ${filePath}`);
+    } else {
+        console.log(`Generating new pro page: ${filePath}`);
+    }
 
     let template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
+
+    // --- GEO SIGNALS ---
+    const cityInfo = GEO_DATA.cities[cityData.city] || {};
+    const zipString = cityInfo.zip_codes ? `Serving: ${cityInfo.zip_codes.join(', ')}` : '';
+    const landmarkHtml = cityInfo.landmarks ? `
+        <div class="local-landmarks">
+            <h5>Local Landmarks & Service Areas</h5>
+            <ul>
+                ${cityInfo.landmarks.map(l => `<li>${l}</li>`).join('')}
+            </ul>
+        </div>` : '';
 
     // --- MAP COMPONENTS ---
     let mapHtml = '';
@@ -202,27 +222,46 @@ function writePlaceholder(dir, url, title, h1, locationString) {
         if (flags.show_reviews && CONFIG.google_place_id) mapHtml += maps.generatePlaceReview(apiKey, CONFIG.google_place_id);
     }
 
-    // --- WEATHER COMPONENT ---
-    let weatherHtml = '';
-    if (CONFIG.weather_enabled) {
-        // Extract city/state parts
-        const parts = locationString.split(',');
-        const city = parts[0].trim();
-        const state = parts[1] ? parts[1].trim() : 'CA';
-        weatherHtml = weather.generateWeatherSnippet(city, state);
-    }
+    // --- ENVIRONMENTAL COMPONENTS ---
+    const weatherHtml = weather.generateWeatherSnippet(cityData.city, cityData.state, weatherData);
+    const pollenHtml = pollen.generatePollenSnippet(pollenData);
+
+    const bodySections = `
+<!-- FACTORY:BODY_START -->
+<div class="pro-location-content">
+    <div class="hero-subline">Premium HVAC Solutions for ${locationString}</div>
+    <div class="zip-coverage">${zipString}</div>
+    
+    <div class="environmental-dashboard">
+        ${weatherHtml}
+        ${pollenHtml}
+    </div>
+
+    <div class="content-block main-narrative">
+        <p>Working Class HVAC is dedicated to providing the residents of ${cityData.city} with reliable, high-performance heating and cooling solutions. Given the <strong>${cityInfo.climate_type || 'local climate'}</strong>, maintaining system efficiency is critical for both comfort and cost-savings.</p>
+        <p>Our technicians are experts in ${h1}, ensuring your home or business remains optimized regardless of the high desert's extreme shifts.</p>
+    </div>
+
+    ${landmarkHtml}
+    
+    <div class="map-container">
+        ${mapHtml}
+    </div>
+</div>
+<!-- FACTORY:BODY_END -->
+    `;
 
     template = template.replace('{{TITLE}}', title)
         .replace('{{H1}}', h1)
         .replace('{{CANONICAL_URL}}', `${CONFIG.domain}${url}`)
-        .replace('{{META_DESCRIPTION}}', `Professional ${h1} in ${title}.`)
-        .replace('{{INTRO}}', `Looking for ${h1} in ${title}? We provide top-tier solutions tailored for your needs.`)
-        .replace('{{BODY_SECTIONS}}', `<!-- FACTORY:BODY_START -->\n<div class="content-block">\n    <p>We are proud to serve the ${title} area with professional ${h1} services.</p>\n    ${weatherHtml}\n    ${mapHtml}\n</div>\n<!-- FACTORY:BODY_END -->`)
+        .replace('{{META_DESCRIPTION}}', `Professional ${h1} in ${locationString}. Live weather, pollen alerts, and expert HVAC care for ${cityData.city} residents.`)
+        .replace('{{INTRO}}', `Optimizing indoor comfort for ${cityData.city}. Check local weather and environmental alerts below.`)
+        .replace('{{BODY_SECTIONS}}', bodySections)
         .replace('{{FAQ_BLOCK}}', '<!-- FACTORY:FAQ_START -->\n<!-- FACTORY:FAQ_END -->')
-        .replace('{{CTA_HEADING}}', `Get Started in ${title}`)
-        .replace('{{CTA_TEXT}}', 'Contact our team of experts today.')
-        .replace('{{CTA_LABEL}}', 'Contact Us')
-        .replace('{{CTA_URL}}', '/contact/');
+        .replace('{{CTA_HEADING}}', `Schedule Service in ${cityData.city}`)
+        .replace('{{CTA_TEXT}}', `Join hundreds of satisfied homeowners in ${cityData.city} who trust Working Class HVAC.`)
+        .replace('{{CTA_LABEL}}', 'Call Now')
+        .replace('{{CTA_URL}}', 'tel:661-235-0000');
 
     writeAtomic(filePath, template);
 }
@@ -324,27 +363,32 @@ async function build() {
                 continue;
             }
 
-            let newServicesCount = 0;
-            const maxServices = CONFIG.max_new_services_per_location || 5;
+            // Fetch environmental data once per city
+            const weatherData = await weather.getWeatherData(loc.city, loc.state, CONFIG.google_maps_api_key);
+            const pollenData = await pollen.getPollenData(null, null, CONFIG.google_maps_api_key);
 
-            // 1. City main page: /city/
-            const cityUrl = `/${nCitySlug}/`;
+            // 1. City main page: /locations/city/
+            const cityUrl = `/locations/${nCitySlug}/`;
             let cityWasNew = false;
-            if (existingUrls.has(cityUrl)) {
-                summary.skipped_duplicates++;
-            } else if (totalPagesBuiltInRun < maxTotalPages) {
-                console.log(`${DRY_RUN ? '[DRY RUN] Would build' : 'Building'}: ${cityUrl}`);
+
+            if (totalPagesBuiltInRun < maxTotalPages) {
+                console.log(`${DRY_RUN ? '[DRY RUN] Would build/update' : 'Processing'}: ${cityUrl}`);
                 const locationString = `${loc.city}, ${loc.state}`;
-                writePlaceholder(path.join(SITE_ROOT, nCitySlug), cityUrl, locationString, `${loc.city} Local Services`, locationString);
-                buildLog.builds.push({ url: cityUrl, type: 'location', timestamp: new Date().toISOString() });
-                newUrls.push(cityUrl);
+                const targetDir = path.join(SITE_ROOT, 'locations', nCitySlug);
+                await generateProLocationPage(targetDir, cityUrl, locationString, `${loc.city} Local HVAC Services`, locationString, loc, weatherData, pollenData);
+
+                if (!existingUrls.has(cityUrl)) {
+                    buildLog.builds.push({ url: cityUrl, type: 'location', timestamp: new Date().toISOString() });
+                    newUrls.push(cityUrl);
+                    summary.new_cities++;
+                }
+
                 totalPagesBuiltInRun++;
                 locationsInRun++;
-                summary.new_cities++;
                 cityWasNew = true;
             }
 
-            // 2. City + Service pages: /city/service/
+            // 2. City + Service pages: /locations/city/service/
             for (const svc of SERVICES) {
                 if (totalPagesBuiltInRun >= maxTotalPages) break;
                 if (newServicesCount >= maxServices) {
@@ -353,26 +397,24 @@ async function build() {
                 }
 
                 const nSvcSlug = normalizeSlug(svc.slug);
-                if (nSvcSlug !== svc.slug) {
-                    console.warn(`Normalized slug: ${svc.slug} -> ${nSvcSlug}`);
-                }
+                const cityServiceUrl = `/locations/${nCitySlug}/${nSvcSlug}/`;
 
-                const cityServiceUrl = `/${nCitySlug}/${nSvcSlug}/`;
-                if (existingUrls.has(cityServiceUrl)) {
-                    summary.skipped_duplicates++;
-                } else {
-                    console.log(`${DRY_RUN ? '[DRY RUN] Would build' : 'Building'}: ${cityServiceUrl}`);
-                    const locationString = `${loc.city}, ${loc.state}`;
-                    writePlaceholder(path.join(SITE_ROOT, nCitySlug, nSvcSlug), cityServiceUrl, `${svc.name} in ${locationString}`, `${svc.name} - ${loc.city}`, locationString);
+                console.log(`${DRY_RUN ? '[DRY RUN] Would build/update' : 'Processing'}: ${cityServiceUrl}`);
+                const locationString = `${loc.city}, ${loc.state}`;
+                const targetDir = path.join(SITE_ROOT, 'locations', nCitySlug, nSvcSlug);
+                await generateProLocationPage(targetDir, cityServiceUrl, `${svc.name} in ${locationString}`, `${svc.name} - ${loc.city}`, locationString, loc, weatherData, pollenData);
+
+                if (!existingUrls.has(cityServiceUrl)) {
                     buildLog.builds.push({ url: cityServiceUrl, type: 'city-service', timestamp: new Date().toISOString() });
                     newUrls.push(cityServiceUrl);
-                    totalPagesBuiltInRun++;
-                    newServicesCount++;
                     summary.new_services++;
-                    if (!cityWasNew) {
-                        cityWasNew = true;
-                        locationsInRun++; // Count city if we add a service to it
-                    }
+                }
+
+                totalPagesBuiltInRun++;
+                newServicesCount++;
+                if (!cityWasNew) {
+                    cityWasNew = true;
+                    locationsInRun++;
                 }
             }
         }

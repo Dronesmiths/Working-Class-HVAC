@@ -1,0 +1,26 @@
+{
+    "SPREADSHEET_ID": "1Ipagk7rJmuqCooYkGcQfbs81fqHmuyvyj_MDkTRoSZk",
+    "WEBSITE_DIR": "../../",
+    "DOMAIN": "https://workingclasshvac.com",
+    "GSC_SITE_URL": "sc-domain:workingclasshvac.com",
+    "SITEMAP_FILENAME": "sitemap.xml",
+    "SERVICE_ACCOUNT_FILE": "service-account.json",
+    "SITEMAP_MAPPING": {
+        "📂 SERVICE PAGES": [
+            "/services/"
+        ],
+        "✍️ BLOG ARTICLES": [
+            "/blog/"
+        ],
+        "📍 LOCATION PAGES": [
+            "/locations/"
+        ],
+        "Funnel Pages": [
+            "/pricing/",
+            "/contact/",
+            "/portfolio/",
+            "/specials/",
+            "/financing/"
+        ]
+    }
+}

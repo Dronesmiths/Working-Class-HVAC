@@ -17,12 +17,14 @@ async function auditAssets() {
     const assetReport = [];
 
     const htmlFiles = getAllHtmlFiles(SITE_ROOT);
+    console.log(`[Asset Audit] Found ${htmlFiles.length} HTML files to audit.`);
+
     for (const file of htmlFiles) {
         if (file.includes('node_modules')) continue;
-        
+
         const content = fs.readFileSync(file, 'utf8');
         const imgTags = content.match(/<img [^>]*src="([^"]+)"[^>]*>/g) || [];
-        
+
         imgTags.forEach(tag => {
             const src = tag.match(/src="([^"]+)"/)?.[1];
             const alt = tag.match(/alt="([^"]*)"/)?.[1];
@@ -32,13 +34,13 @@ async function auditAssets() {
                 'Page Path': relativePage,
                 'Image Source': src,
                 'Alt Text Status': alt ? '✅ Present' : '❌ MISSING (SEO Risk)',
-                'Format': src.endsWith('.webp') ? 'Premium (WebP)' : 'Standard (Legacy)',
+                'Format': src ? (src.endsWith('.webp') ? 'Premium (WebP)' : 'Standard (Legacy)') : 'Unknown',
                 'Last Verified': new Date().toISOString()
             });
         });
     }
 
-    console.log(`[Asset Audit] Audited ${assetReport.length} image instances.`);
+    console.log(`[Asset Audit] Generated report with ${assetReport.length} image instances.`);
     await syncToGoogleSheets(CONFIG, assetReport, "Asset Health");
     console.log('--- Asset Audit Complete ---');
 }
@@ -46,10 +48,11 @@ async function auditAssets() {
 function getAllHtmlFiles(dirPath, arrayOfFiles) {
     const files = fs.readdirSync(dirPath);
     arrayOfFiles = arrayOfFiles || [];
-    files.forEach(function(file) {
+    files.forEach(function (file) {
         const fullPath = path.join(dirPath, file);
         if (fs.statSync(fullPath).isDirectory()) {
-            if (file !== 'node_modules' && file !== '.git') {
+            const exclude = ['node_modules', '.git', '_engine', 'scripts', 'GOOGLE KEYS'];
+            if (!exclude.includes(file)) {
                 arrayOfFiles = getAllHtmlFiles(fullPath, arrayOfFiles);
             }
         } else if (file === 'index.html') {
