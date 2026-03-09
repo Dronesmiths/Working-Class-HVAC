@@ -2,26 +2,51 @@
     {
         "city": "Lancaster",
         "state": "CA",
-        "slug": "lancaster-ca"
+        "slug": "lancaster"
     },
     {
         "city": "Palmdale",
         "state": "CA",
-        "slug": "palmdale-ca"
+        "slug": "palmdale"
     },
     {
         "city": "Tehachapi",
         "state": "CA",
-        "slug": "tehachapi-ca"
+        "slug": "tehachapi"
     },
     {
         "city": "Rosamond",
         "state": "CA",
-        "slug": "rosamond-ca"
+        "slug": "rosamond"
     },
     {
         "city": "Quartz Hill",
         "state": "CA",
-        "slug": "quartz-hill-ca"
+        "slug": "quartz-hill"
+    },
+    {
+        "city": "Juniper Hills",
+        "state": "CA",
+        "slug": "juniper-hills"
+    },
+    {
+        "city": "Llano",
+        "state": "CA",
+        "slug": "llano"
+    },
+    {
+        "city": "Hi Vista",
+        "state": "CA",
+        "slug": "hi-vista"
+    },
+    {
+        "city": "Fairmont",
+        "state": "CA",
+        "slug": "fairmont"
+    },
+    {
+        "city": "Valyermo",
+        "state": "CA",
+        "slug": "valyermo"
     }
 ]

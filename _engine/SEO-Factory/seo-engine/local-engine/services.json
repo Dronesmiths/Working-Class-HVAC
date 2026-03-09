@@ -1,6 +1,22 @@
 [
     {
-        "name": "Local SEO Services",
-        "slug": "local-seo-services"
+        "name": "AC Repair & Installation",
+        "slug": "ac-repair"
+    },
+    {
+        "name": "Furnace Installation & Repair",
+        "slug": "furnace-repair"
+    },
+    {
+        "name": "Heating & Cooling Systems",
+        "slug": "hvac-systems"
+    },
+    {
+        "name": "Indoor Air Quality",
+        "slug": "air-quality"
+    },
+    {
+        "name": "Maintenance Plans",
+        "slug": "maintenance"
     }
 ]

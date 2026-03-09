@@ -337,8 +337,10 @@ async function build() {
         const maxLocations = CONFIG.max_new_locations_per_run || 3;
 
         const seenSlugs = new Set();
+        const maxServices = CONFIG.max_services_per_location || 5;
 
         for (const loc of LOCATIONS) {
+            let newServicesCount = 0;
             if (totalPagesBuiltInRun >= maxTotalPages) break;
             if (locationsInRun >= maxLocations) break;
 

@@ -1,0 +1,138 @@
+{
+    "cities": {
+        "Lancaster": {
+            "zip_codes": [
+                "93534",
+                "93535",
+                "93536",
+                "93539",
+                "93584"
+            ],
+            "landmarks": [
+                "Lancaster National Boneyard",
+                "Antelope Valley California Poppy Reserve",
+                "The Musical Road"
+            ],
+            "climate_type": "High Desert - Hot Summers, Cold Winters"
+        },
+        "Palmdale": {
+            "zip_codes": [
+                "93550",
+                "93551",
+                "93552",
+                "93590",
+                "93591",
+                "93599"
+            ],
+            "landmarks": [
+                "Blackbird Airpark",
+                "Joe Davies Heritage Airpark",
+                "DryTown Water Park"
+            ],
+            "climate_type": "High Desert - High Heat, Significant Wind"
+        },
+        "Tehachapi": {
+            "zip_codes": [
+                "93561",
+                "93581"
+            ],
+            "landmarks": [
+                "Tehachapi Loop",
+                "Cesar Chavez National Monument",
+                "Mountain Valley Airport"
+            ],
+            "climate_type": "Mountain/High Desert - Heavy Snow, Moderate Summers"
+        },
+        "Quartz Hill": {
+            "zip_codes": [
+                "93536"
+            ],
+            "landmarks": [
+                "Quartz Hill Library",
+                "Lane Park"
+            ],
+            "climate_type": "High Desert Arid"
+        },
+        "Rosamond": {
+            "zip_codes": [
+                "93560"
+            ],
+            "landmarks": [
+                "Willow Springs International Raceway",
+                "Exotic Feline Breeding Center"
+            ],
+            "climate_type": "High Desert - Extreme Heat"
+        },
+        "Mojave": {
+            "zip_codes": [
+                "93501",
+                "93502"
+            ],
+            "landmarks": [
+                "Mojave Air and Space Port",
+                "Wind Farm Overlook"
+            ],
+            "climate_type": "Arid Windy Desert"
+        },
+        "Acton": {
+            "zip_codes": [
+                "93510"
+            ],
+            "landmarks": [
+                "Acton Park",
+                "Parker Mountain"
+            ],
+            "climate_type": "Canyon/Desert Hybrid"
+        },
+        "Juniper Hills": {
+            "zip_codes": [
+                "93543"
+            ],
+            "landmarks": [
+                "Juniper Hills Community Park",
+                "Devils Punchbowl Natural Area"
+            ],
+            "climate_type": "High Desert Foothills - High Wind, Extreme Temp Swings"
+        },
+        "Llano": {
+            "zip_codes": [
+                "93544"
+            ],
+            "landmarks": [
+                "Llano del Rio Cooperative Colony Ruins",
+                "Black Butte"
+            ],
+            "climate_type": "Arid Desert - Wind and Heat"
+        },
+        "Hi Vista": {
+            "zip_codes": [
+                "93535"
+            ],
+            "landmarks": [
+                "Saddleback Butte State Park",
+                "Antelope Valley Indian Museum"
+            ],
+            "climate_type": "Extreme Desert Arid"
+        },
+        "Fairmont": {
+            "zip_codes": [
+                "93536"
+            ],
+            "landmarks": [
+                "Antelope Valley Poppy Reserve",
+                "Fairmont Reservoir"
+            ],
+            "climate_type": "Windy High Desert"
+        },
+        "Valyermo": {
+            "zip_codes": [
+                "93563"
+            ],
+            "landmarks": [
+                "St. Andrew's Abbey",
+                "Valyermo Post Office"
+            ],
+            "climate_type": "Desert Foothills - Snow potential, High Winds"
+        }
+    }
+}
