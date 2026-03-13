@@ -118,7 +118,7 @@
     <section class="hero page-hero"
         style="background: linear-gradient(rgba(0, 30, 80, 0.9), rgba(0, 20, 50, 0.9)), url('../../images/hero-home-matt.webp'); background-position: center; background-size: cover;">
         <div class="container">
-            <h1>AC Repair & Installation in Lancaster, CA</h1>
+            <h1 style="font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;">AC Repair & Installation in <span style="color: #4dabf7;">Lancaster, CA</span></h1>
             <p>Don't let the High Desert heat beat you. We provide fast, honest AC repairs and energy-efficient
                 installations.</p>
             <div class="hero-btns">
@@ -131,106 +131,204 @@
     <!-- Spoke Menu -->
     <section class="service-menu" style="background: var(--bg-light); padding: 40px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--primary-dark);">
-                Specialized AC Services</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.8rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px;">
+                Specialized AC <span style="color: var(--primary-blue);">Services</span></h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <a href="/services/ac-repair/emergency/" style="text-decoration: none; color: inherit;">
-                    <li
-                        style="list-style: none; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #e74c3c;">
-                        <i class="fas fa-clock" style="font-size: 1.5rem; color: #e74c3c; margin-bottom: 10px;"></i>
-                        <h4 style="margin: 0;">24/7 Emergency Repair</h4>
-                    </li>
+                <a href="/services/ac-repair/emergency/" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                    <div
+                        style="background: #fff; padding: 35px 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #e74c3c; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <i class="fas fa-clock" style="font-size: 1.8rem; color: #e74c3c; margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 1.15rem;">24/7 Emergency Repair</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.4;">Fast, reliable help when you need it most, day or night.</p>
+                    </div>
                 </a>
-                <a href="/services/ac-repair/maintenance/" style="text-decoration: none; color: inherit;">
-                    <li
-                        style="list-style: none; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary-green);">
+                <a href="/services/ac-repair/maintenance/" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                    <div
+                        style="background: #fff; padding: 35px 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary-green); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                         <i class="fas fa-tools"
-                            style="font-size: 1.5rem; color: var(--primary-green); margin-bottom: 10px;"></i>
-                        <h4 style="margin: 0;">AC Tune-Up & Maintenance</h4>
-                    </li>
+                            style="font-size: 1.8rem; color: var(--primary-green); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 1.15rem;">AC Tune-Up & Maintenance</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.4;">Keep your system running efficiently and reliably all summer.</p>
+                    </div>
                 </a>
-                <a href="/services/ac-repair/installation/" style="text-decoration: none; color: inherit;">
-                    <li
-                        style="list-style: none; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary-blue);">
+                <a href="/services/ac-repair/installation/" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                    <div
+                        style="background: #fff; padding: 35px 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid var(--primary-blue); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                         <i class="fas fa-box"
-                            style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 10px;"></i>
-                        <h4 style="margin: 0;">New AC Installation</h4>
-                    </li>
+                            style="font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                        <h4 style="margin: 0 0 10px 0; font-size: 1.15rem;">New AC Installation</h4>
+                        <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.4;">Expert installation of reliable, high-efficiency cooling systems.</p>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Content Section -->
-    <section class="features" id="details">
+    <section class="features" id="details" style="background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);">
         <div class="container">
-            <div class="service-page-grid">
+            
+            <!-- Section Header -->
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+                <h2 style="margin-bottom: 20px; font-size: 2.8rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px;">Reliable Cooling <span style="color: var(--primary-blue);">Solutions</span></h2>
+                <p style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.6; color: #444;">
+                    At Working Class HVAC, we know that a broken air conditioner in the Antelope Valley summer isn't just an inconvenience—it's an emergency. Our team is dedicated to getting your home cool and comfortable again as quickly as possible.
+                </p>
+            </div>
 
-                <!-- Main Content -->
-                <div style="text-align: left;">
-                    <h2 style="margin-bottom: 20px; font-size: 2.2rem; color: var(--primary-dark);">Reliable Cooling
-                        Solutions</h2>
-                    <p style="margin-bottom: 20px;">
-                        At Working Class HVAC, we know that a broken air conditioner in the Antelope Valley summer isn't
-                        just an inconvenience—it's an emergency.
-                        Our team is dedicated to getting your home cool and comfortable again as quickly as possible.
-                    </p>
-                    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--primary-dark);">AC Repair Services
-                    </h3>
-                    <p style="margin-bottom: 20px;">
-                        We diagnose and fix all major brands and models. Common issues we solve include:
-                    </p>
-                    <ul class="av-palmdale-area-list" style="margin-bottom: 30px; display: block;">
-                        <li style="margin-bottom: 8px;">❄️ No cold air / Blowing warm air</li>
-                        <li style="margin-bottom: 8px;">❄️ Frozen coils or refrigerant leaks</li>
-                        <li style="margin-bottom: 8px;">❄️ Strange noises (grinding, squealing)</li>
-                        <li style="margin-bottom: 8px;">❄️ Thermostat malfunctions</li>
-                        <li style="margin-bottom: 8px;">❄️ Electrical failures (capacitors, contactors)</li>
-                    </ul>
-
-                    <h3 style="margin-bottom: 15px; font-size: 1.5rem; color: var(--primary-dark);">New System
-                        Installation</h3>
-                    <p style="margin-bottom: 20px;">
-                        Is your old unit struggling to keep up? We install high-efficiency AC systems that can lower
-                        your energy bills and provide superior cooling.
-                        We offer free estimates on all new installations.
-                    </p>
-                    <a href="/contact/" class="btn btn-primary">Schedule Service</a>
-                </div>
-
-                <!-- Sidebar / Image -->
-                <div class="feature-card"
-                    style="padding: 0; overflow: hidden; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <img src="../../images/service-ac-repair.webp" alt="AC Repair Technician"
-                        style="width: 100%; height: auto; display: block;"
-                        onerror="this.src='../../images/hero-home-matt.webp'">
-                    <div style="padding: 30px; background: #fff; text-align: left;">
-                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Why Choose Us?</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                                <i class="fas fa-check-circle"
-                                    style="color: var(--primary-green); margin-right: 10px;"></i>
-                                Flat-Rate Pricing
-                            </li>
-                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                                <i class="fas fa-check-circle"
-                                    style="color: var(--primary-green); margin-right: 10px;"></i>
-                                Licensed & Insured (C-20)
-                            </li>
-                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                                <i class="fas fa-check-circle"
-                                    style="color: var(--primary-green); margin-right: 10px;"></i>
-                                Local Owner-Operator
-                            </li>
-                            <li style="margin-bottom: 10px; display: flex; align-items: center;">
-                                <i class="fas fa-check-circle"
-                                    style="color: var(--primary-green); margin-right: 10px;"></i>
-                                No Commission Sales
-                            </li>
-                        </ul>
+            <!-- Main Content Container -->
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                
+                <!-- Humanizing Image Section -->
+                <div style="margin-bottom: 40px; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); position: relative;">
+                    <img src="../../images/hvac-technician-lancaster-hero.webp" alt="Working Class HVAC Technician inspecting an AC unit" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,26,61,0.9) 0%, transparent 100%); padding: 30px 20px 20px;">
+                        <span style="background: var(--primary-green); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 10px;">Local Experts</span>
+                        <h3 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Real People, Honest Work</h3>
                     </div>
                 </div>
 
+                <h3 style="margin-bottom: 20px; font-size: 2rem; font-weight: 800; color: var(--primary-dark); text-align: center; letter-spacing: -0.5px;">AC Repair <span style="color: var(--primary-blue);">Services</span></h3>
+                <p style="margin-bottom: 35px; font-size: 1.05rem; color: #555; text-align: center;">
+                    We diagnose and fix all major brands and models. Common issues we solve include:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 50px;">
+                    <!-- Card 1 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-wind" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">No Cold Air</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Blowing warm air instead of cooling your home.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-icicles" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">Frozen Coils</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Ice buildup or suspected refrigerant leaks.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-volume-up" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">Strange Noises</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Grinding, squealing, or loud banging sounds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-temperature-high" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">Thermostat Issues</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Unresponsive or inaccurate temperature controls.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-bolt" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">Electrical Failures</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Bad capacitors, contactors, or blown fuses.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div style="background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 8px 24px rgba(0,0,0,0.04); display: flex; align-items: flex-start; gap: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-align: left;">
+                        <div style="background: rgba(0, 102, 204, 0.08); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fas fa-fan" style="color: var(--primary-blue); font-size: 1.3rem;"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 1.15rem; color: var(--primary-dark);">Poor Airflow</h4>
+                            <p style="margin: 0; font-size: 0.95rem; color: #666; line-height: 1.5;">Weak air output from vents or uneven cooling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fdfdfd; padding: 35px; border-radius: 12px; border: 1px solid #eee; border-left: 6px solid var(--primary-green); margin-bottom: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); text-align: left;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.6rem; color: var(--primary-dark); display: flex; align-items: center; gap: 12px;">
+                        <div style="background: rgba(39, 174, 96, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-box" style="color: var(--primary-green); font-size: 1.1rem;"></i>
+                        </div>
+                        New System Installation
+                    </h3>
+                    <p style="margin: 0; color: #444; line-height: 1.6; font-size: 1.05rem;">
+                        Is your old unit struggling to keep up? We install high-efficiency AC systems that can lower
+                        your energy bills and provide superior cooling. We offer free estimates on all new installations.
+                    </p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="/contact/" class="btn btn-primary" style="padding: 16px 40px; font-size: 1.15rem; border-radius: 6px; box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);">Schedule Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Why Choose Us -->
+    <section class="why-choose-us" style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 90px 0; color: #fff; position: relative; overflow: hidden;">
+        <!-- Decorative Background Elements for Premium Feel -->
+        <div style="position: absolute; top: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(39, 174, 96, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; color: #ffffff;">Why Choose <span style="color: #4dabf7;">Working Class HVAC?</span></h2>
+                <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 650px; margin: 0 auto; line-height: 1.7;">Experience the difference. We bring honesty, expertise, and fair pricing to every single job in the Antelope Valley.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <!-- Feature 1 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(77, 171, 247, 0.4)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+                    <div style="width: 75px; height: 75px; margin: 0 auto 25px; background: linear-gradient(135deg, rgba(77, 171, 247, 0.15) 0%, rgba(0, 102, 204, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 15px rgba(255,255,255,0.05);">
+                        <i class="fas fa-tags" style="font-size: 2.2rem; color: #4dabf7;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; color: #ffffff;">Flat-Rate Pricing</h3>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0; line-height: 1.6;">Know the exact cost before we start any work. No hidden fees or surprise hourly charges whatever.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(74, 222, 128, 0.4)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+                    <div style="width: 75px; height: 75px; margin: 0 auto 25px; background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(20, 100, 50, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 15px rgba(255,255,255,0.05);">
+                        <i class="fas fa-certificate" style="font-size: 2.2rem; color: #4ade80;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; color: #ffffff;">Licensed & Insured</h3>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0; line-height: 1.6;">Fully licensed (C-20 #1024283) and insured for your complete peace of mind and protection.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(77, 171, 247, 0.4)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+                    <div style="width: 75px; height: 75px; margin: 0 auto 25px; background: linear-gradient(135deg, rgba(77, 171, 247, 0.15) 0%, rgba(0, 102, 204, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 15px rgba(255,255,255,0.05);">
+                        <i class="fas fa-handshake" style="font-size: 2.2rem; color: #4dabf7;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; color: #ffffff;">Owner-Operated</h3>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0; line-height: 1.6;">Direct communication with the local owner. We care deeply about our reputation in the community.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 16px; text-align: center; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(74, 222, 128, 0.4)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 255, 255, 0.1)';">
+                    <div style="width: 75px; height: 75px; margin: 0 auto 25px; background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(20, 100, 50, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 15px rgba(255,255,255,0.05);">
+                        <i class="fas fa-ban" style="font-size: 2.2rem; color: #4ade80;"></i>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 15px; font-weight: 700; color: #ffffff;">No Commission Sales</h3>
+                    <p style="font-size: 1rem; color: #94a3b8; margin: 0; line-height: 1.6;">Our technicians are paid to fix problems, never pressured to upsell you parts you don't need.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -238,8 +336,8 @@
     <!-- Helpful Resources Section -->
     <section class="features" style="background: #fff; padding-top: 60px;">
         <div class="container">
-            <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 40px; font-size: 2rem;">Helpful AC
-                Repair articles</h2>
+            <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 40px; font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px;">Helpful AC
+                Repair <span style="color: var(--primary-blue);">Articles</span></h2>
             <div class="blog-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 0;">
 
@@ -298,117 +396,263 @@
         </div>
     </section>
     <!-- CTA Section -->
-    <section class="cta-section"
-        style="background: var(--primary-blue); padding: 80px 0; text-align: center; color: white;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: white;">Ready to Restore Your
-                Comfort?</h2>
-            <p
-                style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Expert HVAC service is just a phone call away. Fair prices, honest work, and fast response times.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:6614948075" class="btn btn-primary"
-                    style="font-size: 1.1rem; padding: 15px 40px; border: 2px solid var(--accent-red);">
-                    <i class="fas fa-phone" aria-hidden="true"></i> Call (661) 494-8075
-                </a>
-                <a href="/contact/" class="btn"
-                    style="font-size: 1.1rem; padding: 15px 40px; background: transparent; border: 2px solid white; color: white; border-radius: 5px; font-weight: 700; transition: all 0.3s ease;">
-                    Get a Free Estimate
-                </a>
-            </div>
-        </div>
-    </section>
+    <section class="cta-section" style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 100px 0; text-align: center; color: #fff; position: relative; overflow: hidden;">
+        <!-- Glowing Orbs -->
+        <div style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 102, 204, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(77, 171, 247, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
 
-    <section class="avyard-faq" style="background: #f8faff;">
-        <div class="avyard-faq-inner">
-            <h2>Common AC Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Why is my AC freezing up?</h3>
-                    <p>Ice on the coils usually restricts airflow. This is caused by a dirty filter or low refrigerant
-                        levels. Turn the unit off immediately to prevent compressor damage and call us.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How often should I service my AC?</h3>
-                    <p>We recommend a tune-up once a year, preferably in the spring before the summer heat hits. This
-                        helps prevent unexpected breakdowns.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What is a SEER rating?</h3>
-                    <p>SEER stands for Seasonal Energy Efficiency Ratio. Higher SEER numbers mean the unit is more
-                        efficient and costs less to operate. New standards require a minimum of SEER2 14.3 in
-                        California.</p>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="max-width: 850px; margin: 0 auto; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 60px 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: #ffffff; letter-spacing: -0.5px;">Ready to Restore Your
+                    <span style="color: #4dabf7;">Comfort?</span></h2>
+                <p
+                    style="font-size: 1.15rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; color: #cbd5e1; line-height: 1.7;">
+                    Expert HVAC service is just a phone call away. Fair prices, honest work, and fast response times in the Antelope Valley.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:6614948075" class="btn"
+                        style="font-size: 1.15rem; padding: 16px 40px; background: linear-gradient(135deg, #4dabf7 0%, #0066cc 100%); color: #ffffff; border: none; border-radius: 8px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(0, 102, 204, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0, 102, 204, 0.4)';">
+                        <i class="fas fa-phone" aria-hidden="true"></i> Call (661) 494-8075
+                    </a>
+                    <a href="/contact/" class="btn"
+                        style="font-size: 1.15rem; padding: 16px 40px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.transform='translateY(0)';">
+                        Get a Free Estimate
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="aw-footer">
-        <div class="container aw-footer-inner">
+    <section class="avyard-faq" style="background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); padding: 80px 0;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="text-align: center; font-size: 2.8rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px; margin-bottom: 50px;">Common AC <span style="color: var(--primary-blue);">Questions</span></h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- FAQ Item 1 -->
+                <div style="background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.03)';">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-top: 0; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-question-circle" style="color: var(--primary-blue); margin-top: 4px; font-size: 1.1rem;"></i>
+                        Why is my AC freezing up?
+                    </h3>
+                    <p style="font-size: 1rem; color: #555; line-height: 1.6; margin: 0; padding-left: 30px;">
+                        Ice on the coils usually restricts airflow. This is caused by a dirty filter or low refrigerant levels. Turn the unit off immediately to prevent compressor damage and call us.
+                    </p>
+                </div>
 
+                <!-- FAQ Item 2 -->
+                <div style="background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-green); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.03)';">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-top: 0; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-calendar-check" style="color: var(--primary-green); margin-top: 4px; font-size: 1.1rem;"></i>
+                        How often should I service my AC?
+                    </h3>
+                    <p style="font-size: 1rem; color: #555; line-height: 1.6; margin: 0; padding-left: 30px;">
+                        We recommend a tune-up once a year, preferably in the spring before the summer heat hits. This helps prevent unexpected breakdowns and extends system life.
+                    </p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div style="background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #eaeaea; border-left: 5px solid var(--primary-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.03)';">
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); margin-top: 0; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                        <i class="fas fa-leaf" style="color: var(--primary-blue); margin-top: 4px; font-size: 1.1rem;"></i>
+                        What is a SEER rating?
+                    </h3>
+                    <p style="font-size: 1rem; color: #555; line-height: 1.6; margin: 0; padding-left: 30px;">
+                        SEER stands for Seasonal Energy Efficiency Ratio. Higher SEER numbers mean the unit is more efficient and costs less to operate. California requires a minimum of SEER2 14.3.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CSS & HTML -->
+    <style>
+        .premium-footer {
+            background: #0a0f1d;
+            color: #cbd5e1;
+            padding: 75px 0 30px;
+            font-size: 0.95rem;
+        }
+        .premium-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .footer-logo-row1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .footer-logo-row2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #4dabf7;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .footer-contact-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: color 0.2s ease;
+        }
+        .footer-contact-link:hover {
+            color: #fff;
+        }
+        .footer-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .footer-column h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .footer-services-list, .footer-locations-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-locations-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #4dabf7;
+        }
+        
+        /* Mobile Centering Core Logic */
+        @media (max-width: 768px) {
+            .premium-footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 45px;
+            }
+            .footer-brand, .footer-column {
+                align-items: center;
+            }
+            .footer-contact-links-container {
+                width: max-content;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 0 auto;
+                gap: 15px;
+            }
+            .footer-contact-link {
+                justify-content: flex-start;
+                text-align: left;
+            }
+            .footer-services-list {
+                align-items: center;
+                text-align: center;
+            }
+            .footer-locations-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px 30px;
+                width: max-content;
+                margin: 0 auto;
+                text-align: left;
+            }
+        }
+    </style>
+
+    <footer class="premium-footer">
+        <div class="container premium-footer-grid">
+            
             <!-- Brand & Contact -->
-            <div class="aw-footer-brand">
-                <h3>Working Class <span>HVAC</span></h3>
-                <p>Licensed HVAC Contractor | License #1024283</p>
-                <p class="aw-footer-phone">
-                    <span>📞</span>
-                    <a href="tel:6614948075">(661) 494-8075</a>
-                </p>
-                <p class="aw-footer-email">
-                    <span>✉️</span>
-                    <a href="mailto:WorkingclassAV@yahoo.com">WorkingclassAV@yahoo.com</a>
-                </p>
-                <p class="aw-footer-address">
-                    <span>📍</span>
-                    <a href="https://www.google.com/maps/place/Working+Class+HVAC/@34.6599102,-118.171233,17z"
-                        target="_blank" rel="noopener">2232 West Ave L, Lancaster, CA 93536</a>
-                </p>
+            <div class="footer-brand footer-column">
+                <a href="/" class="footer-logo">
+                    <span class="footer-logo-row1">Working Class</span>
+                    <span class="footer-logo-row2">HVAC</span>
+                </a>
+                <p style="margin-bottom: 25px; line-height: 1.6;">Licensed HVAC Contractor committed to honest work and fair pricing in the Antelope Valley.</p>
+                
+                <div class="footer-contact-links-container">
+                    <a href="tel:6614948075" class="footer-contact-link">
+                        <div class="footer-icon"><i class="fas fa-phone" style="color: #4dabf7;"></i></div>
+                        (661) 494-8075
+                    </a>
+                    <a href="mailto:WorkingclassAV@yahoo.com" class="footer-contact-link">
+                        <div class="footer-icon"><i class="fas fa-envelope" style="color: #4dabf7;"></i></div>
+                        WorkingclassAV@yahoo.com
+                    </a>
+                    <a href="https://www.google.com/maps/place/Working+Class+HVAC/@34.6599102,-118.171233,17z" target="_blank" rel="noopener" class="footer-contact-link">
+                        <div class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #4dabf7;"></i></div>
+                        2232 West Ave L, Lancaster, CA
+                    </a>
+                </div>
             </div>
 
             <!-- Services -->
-            <div class="aw-footer-services">
+            <div class="footer-column">
                 <h4>Our Services</h4>
-                <ul>
-                    <li><a href="/services/ac-repair/">AC Repair & Installation</a></li>
-                    <li><a href="/services/mobile-home-hvac/">Mobile Home HVAC</a></li>
-                    <li><a href="/services/mini-splits/">Ductless Mini-Splits</a></li>
-                    <li><a href="/services/emergency-service/">Emergency HVAC Service</a></li>
-                    <li><a href="/services/furnace-repair/">Furnace Installation</a></li>
-                    <li><a href="/services/">Heating & Cooling</a></li>
-                    <li><a href="/services/air-quality/">Air Quality Services</a></li>
-                    <li><a href="/services/maintenance/">Maintenance Plans</a></li>
+                <ul class="footer-services-list">
+                    <li><a href="/services/ac-repair/" class="footer-link">AC Repair & Installation</a></li>
+                    <li><a href="/services/furnace-repair/" class="footer-link">Furnace Repair & Install</a></li>
+                    <li><a href="/services/maintenance/" class="footer-link">Preventative Maintenance</a></li>
+                    <li><a href="/services/mini-splits/" class="footer-link">Ductless Mini-Splits</a></li>
+                    <li><a href="/services/mobile-home-hvac/" class="footer-link">Mobile Home HVAC</a></li>
+                    <li><a href="/services/air-quality/" class="footer-link">Indoor Air Quality</a></li>
                 </ul>
             </div>
 
             <!-- Locations -->
-            <div class="aw-footer-locations">
-                <h4><a href="/locations/" style="color: inherit;">Service Areas</a></h4>
-                <ul>
-                    <li><a href="/locations/lancaster/">Lancaster, CA</a></li>
-                    <li><a href="/locations/palmdale/">Palmdale, CA</a></li>
-                    <li><a href="/locations/quartz-hill/">Quartz Hill</a></li>
-                    <li><a href="/locations/westside-palmdale/">West Palmdale</a></li>
-                    <li><a href="/locations/eastside-lancaster/">East Lancaster</a></li>
-                    <li><a href="/locations/rosamond/">Rosamond</a></li>
-                    <li><a href="/locations/lake-los-angeles/">Lake Los Angeles</a></li>
-                    <li><a href="/locations/littlerock/">Littlerock</a></li>
-                    <li><a href="/locations/pearblossom/">Pearblossom</a></li>
-                    <li><a href="/locations/sun-village/">Sun Village</a></li>
+            <div class="footer-column">
+                <h4><a href="/locations/" style="color: inherit; text-decoration: none;">Service Areas</a></h4>
+                <ul class="footer-locations-list">
+                    <li><a href="/locations/lancaster/" class="footer-link">Lancaster</a></li>
+                    <li><a href="/locations/palmdale/" class="footer-link">Palmdale</a></li>
+                    <li><a href="/locations/quartz-hill/" class="footer-link">Quartz Hill</a></li>
+                    <li><a href="/locations/rosamond/" class="footer-link">Rosamond</a></li>
+                    <li><a href="/locations/littlerock/" class="footer-link">Littlerock</a></li>
+                    <li><a href="/locations/pearblossom/" class="footer-link">Pearblossom</a></li>
                 </ul>
             </div>
-
+            
         </div>
 
         <!-- Bottom Bar -->
-        <div class="aw-footer-bottom">
-            <p>© <span id="year"></span> Working Class Heating & Air. All rights reserved. | C-20 License #1024283 | <a
-                    href="https://www.google.com/maps/place/Working+Class+HVAC/@34.6599102,-118.171233,17z"
-                    target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Find Us on
-                    Google</a> | <a href="/sitemap.xml" style="color: inherit; text-decoration: underline;">Sitemap</a>
-                | <a href="/privacy/" style="color: inherit; text-decoration: underline;">Privacy Policy</a>
-            </p>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: #64748b; font-size: 0.85rem;">
+            <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+                <p style="margin: 0; text-align: center; width: 100%; @media(min-width: 768px){width: auto; text-align: left;}">© <span id="year"></span> Working Class Heating & Air. Licensed C-20 #1024283.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; width: 100%; @media(min-width: 768px){width: auto; justify-content: flex-end;}">
+                    <a href="/sitemap.xml" style="color: #64748b; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#cbd5e1'" onmouseout="this.style.color='#64748b'">Sitemap</a>
+                    <a href="/privacy/" style="color: #64748b; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#cbd5e1'" onmouseout="this.style.color='#64748b'">Privacy Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
 
